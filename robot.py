@@ -1,5 +1,7 @@
 import wpilib
 
+import subsystems
+
 from commandbased import CommandBasedRobot
 
 class Robot(CommandBasedRobot):
@@ -8,4 +10,7 @@ class Robot(CommandBasedRobot):
         subsystems.init()
 
     def teleopInit(self):
-        StartIntake().start()
+        StartIntake().start()
+
+if __name__ == '__main__':
+    wpilib.run(Robot)

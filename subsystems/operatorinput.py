@@ -18,7 +18,7 @@ class OperatorInput(Subsystem):
         startIntakeButton.whenPressed(StartIntake())
 
         stopIntakeButton = JoystickButton(self.joystick, robotmap.buttonsList.stopIntakeID)
-        stopIntakeButton.whenPressed(StopIntake())
+        # stopIntakeButton.whenPressed(StopIntake())
 
     def getXAxis(self):
         return self.joystick.getX()

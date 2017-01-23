@@ -10,6 +10,6 @@ def init():
 
     global driveTrain, operatorInput, intake
 
+    intake = Intake()
     driveTrain = DriveTrain()
     operatorinput = OperatorInput()
-    intake = Intake()

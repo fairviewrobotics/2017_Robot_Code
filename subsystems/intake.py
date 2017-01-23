@@ -1,6 +1,6 @@
 import wpilib
 
-import wpilib.command.subsystem import Subsystem
+from wpilib.command.subsystem import Subsystem
 
 import robotmap
 
