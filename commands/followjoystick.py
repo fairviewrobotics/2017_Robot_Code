@@ -1,7 +1,5 @@
 from wpilib.command import Command
-
 import subsystems
-
 import robotmap
 
 class FollowJoystick(Command):
