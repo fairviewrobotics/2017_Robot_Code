@@ -5,7 +5,7 @@ import robotmap
 class Intake(Subsystem):
 
     def __init__(self):
-        super().__init__('Drive Train')
+        super().__init__('Ball Intake')
         self.motor = wpilib.Talon(robotmap.portsList.intakeMotorID)
 
     def set(self, speed):

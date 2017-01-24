@@ -10,7 +10,7 @@ class RunIntake(Command):
         self.speed = speed
 
     def execute(self):
-        subsystems.intake.set(speed)
+        subsystems.intake.set(self.speed)
 
     def isFinished(self):
         super().isFinished()

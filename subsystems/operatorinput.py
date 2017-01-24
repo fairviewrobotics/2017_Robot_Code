@@ -13,12 +13,12 @@ class OperatorInput(Subsystem):
         self.joystick = Joystick(robotmap.portsList.stickID)
 
         startIntakeButton = JoystickButton(self.joystick, robotmap.buttonsList.startIntakeID)
-        startIntakeButton.whenPressed(RunIntake(0.9)) #0.9 is just default value from before that I copied
+        startIntakeButton.whenPressed(RunIntake(speedsList.intakeSpeed))
         stopIntakeButton = JoystickButton(self.joystick, robotmap.buttonsList.stopIntakeID)
         stopIntakeButton.whenPressed(intake.getCurrentCommand().end)
 
         startOutputButton = JoystickButton(self.joystick, robotmap.buttonsList.startOutputID)
-        startOutputButton.whenPressed(StartOutput(0.9)) #0.9 is just default value from before that I copied
+        startOutputButton.whenPressed(StartOutput(speedsList.outputSpeed))
         stopOutputButton = JoystickButton(self.joystick, robotmap.buttonsList.stopOutputID)
         stopOutputButton.whenPressed(output.getCurrentCommand().end)
 
