@@ -13,16 +13,16 @@ class OperatorInput(Subsystem):
         self.joystick = Joystick(robotmap.portsList.stickID)
 
         startIntakeButton = JoystickButton(self.joystick, robotmap.buttonsList.startIntakeID)
-        startIntakeButton.whenPressed(RunIntake(speedsList.intakeSpeed))
+        startIntakeButton.whenPressed(RunIntake(robotmap.speedsList.intakeSpeed))
         stopIntakeButton = JoystickButton(self.joystick, robotmap.buttonsList.stopIntakeID)
         stopIntakeButton.whenPressed(intake.getCurrentCommand().end)
 
         startOutputButton = JoystickButton(self.joystick, robotmap.buttonsList.startOutputID)
-        startOutputButton.whenPressed(StartOutput(speedsList.outputSpeed))
+        startOutputButton.whenPressed(StartOutput(robotmap.speedsList.outputSpeed))
         stopOutputButton = JoystickButton(self.joystick, robotmap.buttonsList.stopOutputID)
         stopOutputButton.whenPressed(output.getCurrentCommand().end)
 
-    def getXAxis(self):
+    def getXAxis(self):.
         return self.joystick.getX()
 
     def getYAxis(self):
