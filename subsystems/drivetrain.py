@@ -17,7 +17,7 @@ class DriveTrain(Subsystem):
         self.rearRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
 
         self.robotDrive = wpilib.RobotDrive(self.frontLeftWheel, self.rearLeftWheel, self.frontRightWheel, self.rearLeftWheel)
-        print "Wheels initialized."
+        print "Wheels initialized with portlist."
 
     """
         Sets default command of subsystem to be the follow joystick class.
