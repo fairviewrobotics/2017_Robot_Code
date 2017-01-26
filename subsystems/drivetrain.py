@@ -17,7 +17,7 @@ class DriveTrain(Subsystem):
         self.rearRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
 
         self.robotDrive = wpilib.RobotDrive(self.frontLeftWheel, self.rearLeftWheel, self.frontRightWheel, self.rearLeftWheel)
-        print "Wheels initialized with portlist."
+        print("Wheels initialized with portlist.")
 
     """
         Sets default command of subsystem to be the follow joystick class.
@@ -26,7 +26,7 @@ class DriveTrain(Subsystem):
 
     def initDefaultCommand(self):
         self.setDefaultCommand(FollowJoystick())
-        print "The default command of drivetrain is now the joystick class."
+        print("The default command of drivetrain is now the joystick class.")
 
     """
         arcadeDrive uses moveValue as y and rotateValue as x
@@ -36,7 +36,7 @@ class DriveTrain(Subsystem):
     def set(self, x, y, z, gyro=0):
         if robotmap.stateList.fourWheelDrive:
             self.robotDrive.arcadeDrive(y, x)
-            print "Robot is using arcadeDrive."
+            print("Robot is using arcadeDrive.")
         else:
             self.robotDrive.mecanumDrive_Cartesian(x, y, z, gyro)
-            print "Robot is using mecanumDrive_Cartesian"
+            print("Robot is using mecanumDrive_Cartesian")
