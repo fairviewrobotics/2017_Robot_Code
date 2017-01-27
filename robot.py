@@ -5,7 +5,7 @@ from commandbased import CommandBasedRobot
 class Robot(CommandBasedRobot):
 
     """
-    Runs once durring startup, initializes robot.
+    Runs once during startup, initializes robot.
     """
     def robotInit(self):
         subsystems.init()
