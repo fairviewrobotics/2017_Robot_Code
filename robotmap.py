@@ -17,8 +17,8 @@ buttonsList.startIntakeID = 1
 buttonsList.stopIntakeID = 2
 buttonsList.startOutputID = 3
 buttonsList.stopOutputID = 4
-buttonsList.openGearID = 5
-buttonsList.closeGearID = 6
+buttonsList.GearID = 5
+
 
 speedsList = SimpleNamespace()
 speedsList.intakeSpeed = 0.9
