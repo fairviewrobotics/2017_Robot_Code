@@ -11,10 +11,7 @@ class RunGearOutake(Command):
         self.position = position
 
     def execute(self):
-        if robotmap.buttonsList.openGearID.isPressed()
-            subsystems.gearoutake.set(0.8)
-        if robotmap.buttonsList.closeGearID.isPressed()
-            subsystems.gearoutake.set(0.0)
+        subsystems.gearoutake.set(self.position)
 
     def isFinished(self):
         super().isFinished()
