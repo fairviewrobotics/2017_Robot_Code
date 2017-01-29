@@ -1,5 +1,6 @@
+import wpilib
 from wpilib.command import Command
-import subsystem
+import subsystems
 import robotmap
 
 class RunGearOutake(Command):
@@ -7,3 +8,13 @@ class RunGearOutake(Command):
     def __init__(self):
         super().__init__('Gear Outake')
         self.requires(subsystems.gearoutake)
+        self.position = position
+
+    def execute(self):
+        subsystems.gearoutake.set(position)
+
+    def isFinished(self):
+        super().isFinished()
+
+    def end(self):
+        subsystems.gearoutake.set(0)
