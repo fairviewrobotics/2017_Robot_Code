@@ -11,13 +11,15 @@ portsList.rearRightWheelID = 3
 portsList.intakeMotorID = 4
 portsList.outputMotorID = 5
 portsList.stickID = 0
+portsList.gearDoorID = 6
 
 buttonsList = SimpleNamespace()
 buttonsList.startIntakeID = 1
 buttonsList.stopIntakeID = 2
 buttonsList.startOutputID = 3
 buttonsList.stopOutputID = 4
-buttonsList.GearID = 5
+buttonsList.openGearID = 5
+buttonsList.closeGearID = 6
 
 
 speedsList = SimpleNamespace()
