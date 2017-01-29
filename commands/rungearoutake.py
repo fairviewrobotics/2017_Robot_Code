@@ -5,10 +5,10 @@ import robotmap
 
 class RunGearOutake(Command):
 
-    def __init__(self):
+    def __init__(self, position):
         super().__init__('Gear Outake')
         self.requires(subsystems.gearoutake)
-        self.position = position
+        self.position = 0.0
 
     def execute(self):
         subsystems.gearoutake.set(self.position)
