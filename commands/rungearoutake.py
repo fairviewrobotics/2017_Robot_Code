@@ -12,3 +12,6 @@ class RunGearOutake(Command):
 
     def execute(self):
         subsystems.gearoutake.set(self.position)
+
+    def isFinished(self):
+        super().isFinished()
