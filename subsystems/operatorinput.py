@@ -22,6 +22,11 @@ class OperatorInput(Subsystem):
         stopOutputButton = JoystickButton(self.joystick, robotmap.buttonsList.stopOutputID)
         stopOutputButton.whenPressed(output.getCurrentCommand().end)
 
+        openGearDoorButton = JoystickButton(self.joystick, robotmap.buttonsList.openGearID)
+        openGearDoorButton.whenPressed(RunGearOutake(robotmap.positionList.openPosition))
+        closeGearDoorButton = JoystickButton(self.joystick, robotmap.buttonsList.closeGearID)
+        closeGearDoorButton.whenPressed(RunGearOutake(robotmap.positionList.closePosition))
+
     def getXAxis(self):.
         return self.joystick.getX()
 
