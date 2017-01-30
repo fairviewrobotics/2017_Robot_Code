@@ -21,6 +21,9 @@ buttonsList.stopOutputID = 4
 buttonsList.openGearID = 5
 buttonsList.closeGearID = 6
 
+positionList = SimpleNamespace()
+positionList.closePosition = 0.0
+positionList.openPosition = 0.8
 
 speedsList = SimpleNamespace()
 speedsList.intakeSpeed = 0.9
