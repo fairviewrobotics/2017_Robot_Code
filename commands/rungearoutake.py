@@ -8,13 +8,7 @@ class RunGearOutake(Command):
     def __init__(self, position):
         super().__init__('Gear Outake')
         self.requires(subsystems.gearoutake)
-        self.position = 0.0
+        self.position = position
 
     def execute(self):
         subsystems.gearoutake.set(self.position)
-
-    def isFinished(self):
-        super().isFinished()
-
-    def end(self):
-        subsystems.gearoutake.set(0)

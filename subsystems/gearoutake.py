@@ -7,8 +7,7 @@ class GearOutake(Subsystem)
 
 	def __init__(self):
 		super().__init__('Gear Outake')
-		self.servo = wpilib.Servo(robotmap.port.gearDoorID)
-		position = 0.0
+		self.servo = wpilib.Servo(robotmap.portsList.gearDoorID)
 
 	def set(self, position):
 		self.servo.set(position)
