@@ -12,6 +12,7 @@ portsList.intakeMotorID = 4
 portsList.outputMotorID = 5
 portsList.stickID = 0
 portsList.gearDoorID = 6
+portsList.ropeMotorID = 7
 
 buttonsList = SimpleNamespace()
 buttonsList.startIntakeID = 1
@@ -20,6 +21,8 @@ buttonsList.startOutputID = 3
 buttonsList.stopOutputID = 4
 buttonsList.openGearID = 5
 buttonsList.closeGearID = 6
+buttonsList.startRopeID = 7
+buttonsList.stopRopeID = 8
 
 positionList = SimpleNamespace()
 positionList.closePosition = 0.0
