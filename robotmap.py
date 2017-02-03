@@ -1,7 +1,7 @@
 from types import SimpleNamespace
 
 stateList = SimpleNamespace()
-stateList.fourWheelDrive = True # False if Mecanum
+stateList.fourWheelDrive = True  # False if Mecanum
 
 portsList = SimpleNamespace()
 portsList.frontLeftWheelID = 0

@@ -3,20 +3,27 @@ from wpilib.command.subsystem import Subsystem
 from commands.followjoystick import FollowJoystick
 import robotmap
 
+
 class DriveTrain(Subsystem):
 
     """
         Initializes wheels using robotmap's portlist.
     """
+
     def __init__(self):
         super().__init__('Drive Train')
 
         self.frontLeftWheel = wpilib.Talon(robotmap.portsList.frontLeftWheelID)
-        self.frontRightWheel = wpilib.Talon(robotmap.portsList.frontRightWheelID)
+        self.frontRightWheel = wpilib.Talon(
+            robotmap.portsList.frontRightWheelID)
         self.rearLeftWheel = wpilib.Talon(robotmap.portsList.rearLeftWheelID)
         self.rearRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
 
-        self.robotDrive = wpilib.RobotDrive(self.frontLeftWheel, self.rearLeftWheel, self.frontRightWheel, self.rearLeftWheel)
+        self.robotDrive = wpilib.RobotDrive(
+            self.frontLeftWheel,
+            self.rearLeftWheel,
+            self.frontRightWheel,
+            self.rearLeftWheel)
         print("Wheels initialized with portlist.")
 
     """
@@ -33,6 +40,7 @@ class DriveTrain(Subsystem):
         mecanumDrive_Cartesian uses x as the speed in x, y as the speed in y,
         z as the rotation, and doesn't really care about gyro.
     """
+
     def set(self, x, y, z, gyro=0):
         if robotmap.stateList.fourWheelDrive:
             self.robotDrive.arcadeDrive(y, x)

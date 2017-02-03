@@ -10,6 +10,7 @@ output = None
 gearOutake = None
 ropeIntake = None
 
+
 def init():
 
     global driveTrain, intake, output, gearOutake, ropeIntake

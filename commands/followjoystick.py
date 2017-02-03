@@ -3,6 +3,7 @@ import subsystems
 import robotmap
 import operatorinput as oi
 
+
 class FollowJoystick(Command):
 
     def __init__(self):
@@ -10,11 +11,15 @@ class FollowJoystick(Command):
         self.requires(subsystems.driveTrain)
 
     def execute(self):
-        subsystems.driveTrain.set(oi.joystick.getX(), oi.joystick.getY(), oi.joystick.getZ(), 0)
+        subsystems.driveTrain.set(
+            oi.joystick.getX(),
+            oi.joystick.getY(),
+            oi.joystick.getZ(),
+            0)
 
     def end(self):
         subsystems.driveTrain.set(0, 0, 0, 0)
 
     def isFinished(self):
-       #super().isFinished()
-       return False
+        # super().isFinished()
+        return False

@@ -2,6 +2,7 @@ from wpilib.command import InstantCommand
 import subsystems
 import robotmap
 
+
 class StopOutput(InstantCommand):
 
     def __init__(self):
@@ -12,5 +13,5 @@ class StopOutput(InstantCommand):
         subsystems.output.set(0)
 
     def isFinished(self):
-        #super().isFinished()
+        # super().isFinished()
         return False

@@ -2,15 +2,16 @@ from wpilib.command import InstantCommand
 import subsystems
 import robotmap
 
+
 class StopIntake(InstantCommand):
 
     def __init__(self):
-      super().__init__('Stop Intake')
-      self.requires(subsystems.intake)
+        super().__init__('Stop Intake')
+        self.requires(subsystems.intake)
 
     def initialize(self):
-      subsystems.intake.set(0)
+        subsystems.intake.set(0)
 
     def isFinished(self):
-      #super().isFinished()
-      return False
+        # super().isFinished()
+        return False

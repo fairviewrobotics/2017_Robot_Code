@@ -2,6 +2,7 @@ from wpilib.command import InstantCommand
 import robotmap
 import subsystems
 
+
 class StopRopeIntake(InstantCommand):
 
     def __init__(self):
@@ -13,4 +14,4 @@ class StopRopeIntake(InstantCommand):
 
     def isFinished(self):
         super().isFinished()
-        #return False
+        # return False

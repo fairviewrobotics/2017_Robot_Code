@@ -3,6 +3,7 @@ from wpilib.command import Command
 import subsystems
 import robotmap
 
+
 class RunGearOutake(Command):
 
     def __init__(self, position):
@@ -17,5 +18,5 @@ class RunGearOutake(Command):
         pass
 
     def isFinished(self):
-        #super().isFinished()
+        # super().isFinished()
         return False

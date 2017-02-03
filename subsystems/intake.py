@@ -2,6 +2,7 @@ import wpilib
 from wpilib.command.subsystem import Subsystem
 import robotmap
 
+
 class Intake(Subsystem):
 
     def __init__(self):

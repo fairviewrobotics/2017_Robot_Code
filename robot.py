@@ -11,6 +11,7 @@ class Robot(CommandBasedRobot):
     """
     Runs once during startup, initializes robot.
     """
+
     def robotInit(self):
         subsystems.init()
         print("Initialized robot.")
@@ -19,6 +20,7 @@ class Robot(CommandBasedRobot):
     """
     Runs once when remote control is activated, initializes teleop.
     """
+
     def teleopInit(self):
         runintake.RunIntake(robotmap.speedsList.intakeSpeed).start()
         print("Remote control initialized.")
