@@ -15,6 +15,9 @@ class RunOutput(Command):
     def isFinished(self):
         super().isFinished()
 
+    def interrupted(self):
+        subsystems.output.set(0)
+
     #When finished, the output will just start coasting
     def end(self):
         subsystems.output.set(0)

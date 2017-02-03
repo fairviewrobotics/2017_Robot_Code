@@ -2,18 +2,19 @@ from wpilib.command import Command
 import robotmap
 import subsystems
 
-class RunRopeIntake(Command)
+class RunRopeIntake(Command):
 
-    def __init__(self):
+    def __init__(self, speed):
         super().__init__('Run Rope Intake')
-        self.requires(subsystems.ropeintake)
+        self.requires(subsystems.ropeIntake)
         self.speed = speed
 
     def execute(self):
-        subsystems.ropeintake.set(self.speed)
+        subsystems.ropeIntake.set(self.speed)
 
     def isFinished(self):
-        super().isFinished()
+        #super().isFinished()
+        return False
 
     def end(self):
-        subsystems.ropeintake.set(0)
+        subsystems.ropeIntake.set(0)

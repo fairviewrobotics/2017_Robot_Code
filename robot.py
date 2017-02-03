@@ -1,6 +1,10 @@
 import wpilib
 import subsystems
 from commandbased import CommandBasedRobot
+import operatorinput
+from commands import runintake
+import robotmap
+
 
 class Robot(CommandBasedRobot):
 
@@ -10,12 +14,13 @@ class Robot(CommandBasedRobot):
     def robotInit(self):
         subsystems.init()
         print("Initialized robot.")
+        operatorinput.init()
 
     """
     Runs once when remote control is activated, initializes teleop.
     """
     def teleopInit(self):
-        RunIntake().start()
+        runintake.RunIntake(robotmap.speedsList.intakeSpeed).start()
         print("Remote control initialized.")
 
 if __name__ == '__main__':

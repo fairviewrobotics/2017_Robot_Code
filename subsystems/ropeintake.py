@@ -2,7 +2,7 @@ import wpilib
 from wpilib.command.subsystem import Subsystem
 import robotmap
 
-class RopeIntake(Subsystem)
+class RopeIntake(Subsystem):
 
     def __init__(self):
         super().__init__('Rope Intake')
