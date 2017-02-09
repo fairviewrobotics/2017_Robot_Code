@@ -32,3 +32,12 @@ speedsList = SimpleNamespace()
 speedsList.intakeSpeed = 0.9
 speedsList.outputSpeed = 0.9
 speedsList.deadZoneRadius = 0.1
+
+encoders = SimpleNamespace()
+encoders.fr = []
+encoders.fl = []
+encoders.br = []
+encoders.bl = []
+
+auto = SimpleNamespace()
+auto.initialDrive = 0
