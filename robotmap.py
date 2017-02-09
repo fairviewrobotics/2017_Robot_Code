@@ -31,3 +31,4 @@ positionList.openPosition = 0.8
 speedsList = SimpleNamespace()
 speedsList.intakeSpeed = 0.9
 speedsList.outputSpeed = 0.9
+speedsList.deadZoneRadius = 0.1
