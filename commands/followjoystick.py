@@ -4,6 +4,7 @@ import robotmap
 import operatorinput as oi
 import math
 
+
 class FollowJoystick(Command):
 
     def __init__(self):
@@ -19,8 +20,10 @@ class FollowJoystick(Command):
             xAxis = 0
             yAxis = 0
         else:
-            xAxis = (xAxis - robotmap.speedsList.deadZoneRadius) / (1 - robotmap.speedsList.deadZoneRadius)
-            yAxis = (yAxis - robotmap.speedsList.deadZoneRadius) / (1 - robotmap.speedsList.deadZoneRadius)
+            xAxis = (xAxis - robotmap.speedsList.deadZoneRadius) / \
+                (1 - robotmap.speedsList.deadZoneRadius)
+            yAxis = (yAxis - robotmap.speedsList.deadZoneRadius) / \
+                (1 - robotmap.speedsList.deadZoneRadius)
         subsystems.driveTrain.set(xAxis, yAxis, zAxis, 0)
 
     def end(self):
