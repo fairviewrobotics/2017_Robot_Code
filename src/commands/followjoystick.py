@@ -12,19 +12,21 @@ class FollowJoystick(Command):
         self.requires(subsystems.driveTrain)
 
     def execute(self):
-        xAxis = oi.joystick.getX()
-        yAxis = oi.joystick.getY()
-        zAxis = oi.joystick.getZ()
-        distance = math.sqrt(math.pow(xAxis, 2) + math.pow(yAxis, 2))
-        if distance <= robotmap.speedsList.deadZoneRadius:
-            xAxis = 0
-            yAxis = 0
+        x = oi.joystick.getX()
+        y = oi.joystick.getY()
+        z = oi.joystick.getZ()
+
+        if x >= 0
+            xValue = robotmap.values.minimumWheelRotation + (1 - robotmap.values.minimumWheelRotation)*(x ** 3)
         else:
-            xAxis = (xAxis - robotmap.speedsList.deadZoneRadius) / \
-                (1 - robotmap.speedsList.deadZoneRadius)
-            yAxis = (yAxis - robotmap.speedsList.deadZoneRadius) / \
-                (1 - robotmap.speedsList.deadZoneRadius)
-        subsystems.driveTrain.set(xAxis, yAxis, zAxis, 0)
+            xValue = -1 * robotmap.values.minimumWheelRotation + (1 - robotmap.values.minimumWheelRotation)*(x ** 3)
+
+        if y >= 0:
+            yValue = robotmap.values.minimumWheelRotation + (1 - robotmap.values.minimumWheelRotation)*(y ** 3)
+        else:
+            yValue = -1 * robotmap.values.minimumWheelRotation + (1 - robotmap.values.minimumWheelRotation)*(y ** 3)
+
+        subsystems.driveTrain.set(xValue, yValue, z, 0)
 
     def end(self):
         subsystems.driveTrain.set(0, 0, 0, 0)
