@@ -22,33 +22,33 @@ def init():
     joystick = Joystick(robotmap.portsList.stickID)
 
     startIntakeButton = JoystickButton(
-        joystick, robotmap.buttonsList.startIntakeID)
+        joystick, robotmap.buttonsAndAxesList.startIntakeID)
     startIntakeButton.whenPressed(RunIntake(robotmap.speedsList.intakeSpeed))
     stopIntakeButton = JoystickButton(
-        joystick, robotmap.buttonsList.stopIntakeID)
+        joystick, robotmap.buttonsAndAxesList.stopIntakeID)
     stopIntakeButton.whenPressed(StopIntake())
 
     startOutputButton = JoystickButton(
-        joystick, robotmap.buttonsList.startOutputID)
+        joystick, robotmap.buttonsAndAxesList.startOutputID)
     startOutputButton.whenPressed(RunOutput(robotmap.speedsList.outputSpeed))
     stopOutputButton = JoystickButton(
-        joystick, robotmap.buttonsList.stopOutputID)
+        joystick, robotmap.buttonsAndAxesList.stopOutputID)
     stopOutputButton.whenPressed(StopOutput())
 
     openGearDoorButton = JoystickButton(
-        joystick, robotmap.buttonsList.openGearID)
+        joystick, robotmap.buttonsAndAxesList.openGearID)
     openGearDoorButton.whenPressed(
         RunGearOutake(
             robotmap.positionList.openPosition))
     closeGearDoorButton = JoystickButton(
-        joystick, robotmap.buttonsList.closeGearID)
+        joystick, robotmap.buttonsAndAxesList.closeGearID)
     closeGearDoorButton.whenPressed(
         RunGearOutake(robotmap.positionList.closePosition))
 
     startRopeIntakeButton = JoystickButton(
-        joystick, robotmap.buttonsList.startRopeID)
+        joystick, robotmap.buttonsAndAxesList.startRopeID)
     startRopeIntakeButton.whenPressed(
         RunRopeIntake(robotmap.speedsList.intakeSpeed))
     stopRopeIntakeButton = JoystickButton(
-        joystick, robotmap.buttonsList.stopRopeID)
+        joystick, robotmap.buttonsAndAxesList.stopRopeID)
     stopRopeIntakeButton.whenPressed(StopRopeIntake())
