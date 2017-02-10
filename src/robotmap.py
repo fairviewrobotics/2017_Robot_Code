@@ -41,6 +41,7 @@ speedsList = SimpleNamespace()
 speedsList.intakeSpeed = 0.9
 speedsList.outputSpeed = 0.9
 speedsList.deadZoneRadius = 0.1
+speedsList.minimumWheelRotation = 0.2
 
 encoders = SimpleNamespace()
 encoders.fr = [0, 1]

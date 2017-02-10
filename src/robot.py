@@ -2,7 +2,7 @@ import wpilib
 import subsystems
 from commandbased import CommandBasedRobot
 import operatorinput
-from commands import runintake
+from commands.intake import runintake
 import robotmap
 
 

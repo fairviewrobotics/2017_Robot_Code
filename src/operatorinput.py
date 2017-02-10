@@ -1,23 +1,22 @@
 from wpilib.joystick import Joystick
 from wpilib.buttons.joystickbutton import JoystickButton
 
-from commands.runintake import RunIntake
+from commands.intake.runintake import RunIntake
+from commands.outake.runoutput import RunOutput
 
 from commands.gear.closegear import CloseGear
 from commands.gear.opengear import OpenGear
 
-from commands.runoutput import RunOutput
-from commands.runropeintake import RunRopeIntake
+from commands.rope.runropeintake import RunRopeIntake
 
-from commands.stopintake import StopIntake
-from commands.stopoutput import StopOutput
-from commands.stopropeintake import StopRopeIntake
+from commands.intake.stopintake import StopIntake
+from commands.outake.stopoutput import StopOutput
+from commands.rope.stopropeintake import StopRopeIntake
 
 import robotmap
 
 
 joystick = None
-
 
 def init():
     global joystick
