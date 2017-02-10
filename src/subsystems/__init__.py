@@ -1,7 +1,7 @@
 from .drivetrain import DriveTrain
 from .intake import Intake
 from .output import Output
-from .gearoutake import GearOutake
+from .gear import Gear
 from .ropeintake import RopeIntake
 
 driveTrain = None
@@ -18,5 +18,5 @@ def init():
     intake = Intake()
     driveTrain = DriveTrain()
     output = Output()
-    gearOutake = GearOutake()
+    gearOutake = Gear()
     ropeIntake = RopeIntake()

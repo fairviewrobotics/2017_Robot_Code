@@ -3,7 +3,7 @@ from wpilib.command.subsystem import Subsystem
 import robotmap
 
 
-class GearOutake(Subsystem):
+class Gear(Subsystem):
 
     def __init__(self):
         super().__init__('Gear Outake')
