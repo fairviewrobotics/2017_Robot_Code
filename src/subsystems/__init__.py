@@ -7,16 +7,16 @@ from .ropeintake import RopeIntake
 driveTrain = None
 intake = None
 output = None
-gearOutake = None
+gear = None
 ropeIntake = None
 
 
 def init():
 
-    global driveTrain, intake, output, gearOutake, ropeIntake
+    global driveTrain, intake, output, gear, ropeIntake
 
     intake = Intake()
     driveTrain = DriveTrain()
     output = Output()
-    gearOutake = Gear()
+    gear = Gear()
     ropeIntake = RopeIntake()

@@ -4,17 +4,19 @@ import subsystems
 import robotmap
 
 
-class RunGearOutake(Command):
+class CloseGear(Command):
 
-    def __init__(self, position):
-        super().__init__('Gear Outake')
+    def __init__(self):
+        super().__init__('Close Gear Door')
         self.requires(subsystems.gearOutake)
-        self.position = position
+
+    def initialize(self):
+        subsystems.gear.close()
 
     def execute(self):
-        subsystems.gearOutake.set(self.position)
+        pass
 
-    def interrupted(self):
+    def end(self):
         pass
 
     def isFinished(self):

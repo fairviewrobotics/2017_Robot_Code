@@ -34,8 +34,8 @@ buttonsAndAxesList.startRopeID = 7
 buttonsAndAxesList.stopRopeID = 8
 
 positionList = SimpleNamespace()
-positionList.closePosition = 0.0
-positionList.openPosition = 1.0
+positionList.closeGearDoorPosition = 0.0
+positionList.openGearDoorPosition = 1.0
 
 speedsList = SimpleNamespace()
 speedsList.intakeSpeed = 0.9

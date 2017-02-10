@@ -9,5 +9,8 @@ class Gear(Subsystem):
         super().__init__('Gear Outake')
         self.servo = wpilib.Servo(robotmap.portsList.gearDoorID)
 
-    def set(self, position):
-        self.servo.set(position)
+    def open(self):
+        self.servo.set(robotmap.positionList.openGearDoorPosition)
+
+    def close(self):
+        self.servo.set(robotmap.positionList.closeGearDoorPosition)

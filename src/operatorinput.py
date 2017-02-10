@@ -2,7 +2,10 @@ from wpilib.joystick import Joystick
 from wpilib.buttons.joystickbutton import JoystickButton
 
 from commands.runintake import RunIntake
-from commands.rungearoutake import RunGearOutake
+
+from commands.gear.closegear import CloseGear
+from commands.gear.opengear import OpenGear
+
 from commands.runoutput import RunOutput
 from commands.runropeintake import RunRopeIntake
 
@@ -38,12 +41,11 @@ def init():
     openGearDoorButton = JoystickButton(
         joystick, robotmap.buttonsAndAxesList.openGearID)
     openGearDoorButton.whenPressed(
-        RunGearOutake(
-            robotmap.positionList.openPosition))
+        OpenGear())
     closeGearDoorButton = JoystickButton(
         joystick, robotmap.buttonsAndAxesList.closeGearID)
     closeGearDoorButton.whenPressed(
-        RunGearOutake(robotmap.positionList.closePosition))
+        CloseGear())
 
     startRopeIntakeButton = JoystickButton(
         joystick, robotmap.buttonsAndAxesList.startRopeID)
