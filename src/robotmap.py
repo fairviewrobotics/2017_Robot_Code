@@ -43,10 +43,10 @@ speedsList.outputSpeed = 0.9
 speedsList.deadZoneRadius = 0.1
 
 encoders = SimpleNamespace()
-encoders.fr = []
-encoders.fl = []
-encoders.br = []
-encoders.bl = []
+encoders.fr = [0, 1]
+encoders.fl = [2, 3]
+encoders.br = [4, 5]
+encoders.bl = [6, 7]
 
 auto = SimpleNamespace()
 auto.initialDrive = 0

@@ -8,7 +8,7 @@ class OpenGear(Command):
 
     def __init__(self):
         super().__init__('Open Gear Door')
-        self.requires(subsystems.gearOutake)
+        self.requires(subsystems.gear)
 
     def initialize(self):
         subsystems.gear.open()

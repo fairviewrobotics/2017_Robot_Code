@@ -8,7 +8,7 @@ class CloseGear(Command):
 
     def __init__(self):
         super().__init__('Close Gear Door')
-        self.requires(subsystems.gearOutake)
+        self.requires(subsystems.gear)
 
     def initialize(self):
         subsystems.gear.close()
