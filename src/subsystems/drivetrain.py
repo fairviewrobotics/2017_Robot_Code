@@ -24,6 +24,11 @@ class DriveTrain(Subsystem):
             self.rearLeftWheel,
             self.frontRightWheel,
             self.rearLeftWheel)
+
+        self.robotDrive.setInvertedMotor(wpilib.RobotDrive.MotorType.kRearLeft, True)
+        self.robotDrive.setInvertedMotor(wpilib.RobotDrive.MotorType.kFrontRight, True)
+        self.robotDrive.setInvertedMotor(wpilib.RobotDrive.MotorType.kFrontLeft, True)
+
         print("Wheels initialized with portlist.")
 
         self.frEncoder = wpilib.Encoder(*robotmap.encoders.fr)
