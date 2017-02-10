@@ -14,7 +14,7 @@ class RunOutput(Command):
         subsystems.output.set(self.speed)
 
     def isFinished(self):
-        super().isFinished()
+        return super().isFinished()
 
     def interrupted(self):
         subsystems.output.set(0)

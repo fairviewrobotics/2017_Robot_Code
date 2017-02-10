@@ -14,8 +14,7 @@ class RunRopeIntake(Command):
         subsystems.ropeIntake.set(self.speed)
 
     def isFinished(self):
-        # super().isFinished()
-        return False
+        return super().isFinished()
 
     def end(self):
         subsystems.ropeIntake.set(0)

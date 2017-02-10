@@ -13,5 +13,4 @@ class StopOutput(InstantCommand):
         subsystems.output.set(0)
 
     def isFinished(self):
-        # super().isFinished()
-        return False
+        return super().isFinished()

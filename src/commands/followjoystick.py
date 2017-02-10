@@ -30,5 +30,4 @@ class FollowJoystick(Command):
         subsystems.driveTrain.set(0, 0, 0, 0)
 
     def isFinished(self):
-        # super().isFinished()
-        return False
+        return super().isFinished()

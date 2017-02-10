@@ -18,5 +18,4 @@ class RunGearOutake(Command):
         pass
 
     def isFinished(self):
-        # super().isFinished()
-        return False
+        return super().isFinished()

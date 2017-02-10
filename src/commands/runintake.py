@@ -14,8 +14,7 @@ class RunIntake(Command):
         subsystems.intake.set(self.speed)
 
     def isFinished(self):
-        # super().isFinished()
-        return False
+        return super().isFinished()
 
     def interrupted(self):
         subsystems.intake.set(0)
