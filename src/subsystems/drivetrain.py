@@ -14,9 +14,12 @@ class DriveTrain(Subsystem):
         super().__init__('Drive Train')
 
         self.frontLeftWheel = wpilib.Talon(robotmap.portsList.frontLeftWheelID)
+        self.frontLeftWheel.setInverted(True)
         self.frontRightWheel = wpilib.Talon(
             robotmap.portsList.frontRightWheelID)
+        self.frontRightWheel.setInverted(True)
         self.rearLeftWheel = wpilib.Talon(robotmap.portsList.rearLeftWheelID)
+        self.rearLeftWheel.setInverted(True)
         self.rearRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
 
         self.robotDrive = wpilib.RobotDrive(
