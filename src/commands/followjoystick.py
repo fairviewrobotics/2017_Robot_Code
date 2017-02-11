@@ -10,6 +10,7 @@ class FollowJoystick(Command):
     def __init__(self):
         super().__init__('Follow Joystick')
         self.requires(subsystems.driveTrain)
+        self.requires(subsystems.rope)
 
     def execute(self):
         x = oi.joystick.getX()
@@ -27,6 +28,16 @@ class FollowJoystick(Command):
             yValue = -1 * robotmap.speedsList.minimumWheelRotation + (1 - robotmap.speedsList.minimumWheelRotation)*(y ** 3)
 
         subsystems.driveTrain.set(xValue, yValue, z, 0)
+
+        if oi.joystick.getRawButton(robotmap.buttonsAndAxesList.rope60PercentID):
+            subsystems.rope.set(0.6)
+        elif oi.joystick.getRawButton(robotmap.buttonsAndAxesList.rope100PercentID):
+            subsystems.rope.set(1)
+        else:
+            value = oi.joystick.getRawAxis(robotmap.buttonsAndAxesList.ropeAxis) ** 3
+            subsystems.rope.set(value)
+
+
 
     def end(self):
         subsystems.driveTrain.set(0, 0, 0, 0)

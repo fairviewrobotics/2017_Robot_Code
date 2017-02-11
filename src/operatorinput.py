@@ -35,11 +35,3 @@ def init():
         joystick, robotmap.buttonsAndAxesList.closeGearID)
     closeGearDoorButton.whenPressed(
         CloseGear())
-
-    startRopeButton = JoystickButton(
-        joystick, robotmap.buttonsAndAxesList.startRopeID)
-    startRopeButton.whenPressed(
-        RunRope(robotmap.speedsList.ropeSpeed))
-    stopRopeButton = JoystickButton(
-        joystick, robotmap.buttonsAndAxesList.stopRopeID)
-    stopRopeButton.whenPressed(StopRope())

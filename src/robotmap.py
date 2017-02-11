@@ -20,14 +20,16 @@ portsList.fuelOutakeMotorID = 6
 
 buttonsAndAxesList = SimpleNamespace()
 
-buttonsAndAxesList.startFuelOutakeID = 3
-buttonsAndAxesList.stopFuelOutakeID = 4
+buttonsAndAxesList.startFuelOutakeID = 7
+buttonsAndAxesList.stopFuelOutakeID = 8
 
 buttonsAndAxesList.openGearID = 6
 buttonsAndAxesList.closeGearID = 5
 
-buttonsAndAxesList.startRopeID = 7
-buttonsAndAxesList.stopRopeID = 8
+buttonsAndAxesList.rope60PercentID = 3
+buttonsAndAxesList.rope100PercentID = 4
+
+buttonsAndAxesList.ropeAxis = 4
 
 positionList = SimpleNamespace()
 positionList.closeGearDoorPosition = 0.0
