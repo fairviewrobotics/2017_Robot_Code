@@ -23,7 +23,7 @@ class DriveTrain(Subsystem):
             self.frontLeftWheel,
             self.rearLeftWheel,
             self.frontRightWheel,
-            self.rearLeftWheel)
+            self.rearRightWheel)
 
         self.robotDrive.setInvertedMotor(wpilib.RobotDrive.MotorType.kRearLeft, True)
         self.robotDrive.setInvertedMotor(wpilib.RobotDrive.MotorType.kFrontRight, True)

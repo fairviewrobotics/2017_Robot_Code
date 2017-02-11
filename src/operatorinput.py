@@ -1,14 +1,13 @@
 from wpilib.joystick import Joystick
 from wpilib.buttons.joystickbutton import JoystickButton
 
-from commands.outake.runoutput import RunOutput
+from commands.fueloutake.runfueloutake import RunFuelOutake
+from commands.fueloutake.stopfueloutake import StopFuelOutake
 
 from commands.gear.closegear import CloseGear
 from commands.gear.opengear import OpenGear
 
 from commands.rope.runropeintake import RunRopeIntake
-
-from commands.outake.stopoutput import StopOutput
 from commands.rope.stopropeintake import StopRopeIntake
 
 import robotmap
@@ -21,12 +20,12 @@ def init():
 
     joystick = Joystick(robotmap.portsList.stickID)
 
-    startOutputButton = JoystickButton(
-        joystick, robotmap.buttonsAndAxesList.startOutputID)
-    startOutputButton.whenPressed(RunOutput(robotmap.speedsList.outputSpeed))
-    stopOutputButton = JoystickButton(
-        joystick, robotmap.buttonsAndAxesList.stopOutputID)
-    stopOutputButton.whenPressed(StopOutput())
+    startFuelOutakeButton = JoystickButton(
+        joystick, robotmap.buttonsAndAxesList.startFuelOutakeID)
+    startFuelOutakeButton.whenPressed(RunFuelOutake(robotmap.speedsList.fuelOutakeSpeed))
+    stopFuelOutakeButton = JoystickButton(
+        joystick, robotmap.buttonsAndAxesList.stopFuelOutakeID)
+    stopFuelOutakeButton.whenPressed(StopFuelOutake())
 
     openGearDoorButton = JoystickButton(
         joystick, robotmap.buttonsAndAxesList.openGearID)

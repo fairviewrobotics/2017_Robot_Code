@@ -3,11 +3,11 @@ from wpilib.command.subsystem import Subsystem
 import robotmap
 
 
-class Output(Subsystem):
+class FuelOutake(Subsystem):
 
     def __init__(self):
-        super().__init__('Ball Output')
-        self.motor = wpilib.Talon(robotmap.portsList.outputMotorID)
+        super().__init__('Fuel Outake')
+        self.motor = wpilib.Talon(robotmap.portsList.fuelOutakeMotorID)
 
     def set(self, speed):
         self.motor.set(speed)

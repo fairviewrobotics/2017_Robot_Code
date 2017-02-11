@@ -3,14 +3,14 @@ import subsystems
 import robotmap
 
 
-class StopOutput(InstantCommand):
+class StopFuelOutake(InstantCommand):
 
     def __init__(self):
-        super().__init__('Stop Output')
-        self.requires(subsystems.output)
+        super().__init__('Stop Fuel Outake')
+        self.requires(subsystems.fuelOutake)
 
     def initialize(self):
-        subsystems.output.set(0)
+        subsystems.fuelOutake.set(0)
 
     def isFinished(self):
         return super().isFinished()

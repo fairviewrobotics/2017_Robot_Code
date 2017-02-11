@@ -16,15 +16,15 @@ portsList.ropeMotorID = 4
 
 portsList.gearDoorID = 5
 
-portsList.outputMotorID = 6
+portsList.fuelOutakeMotorID = 6
 
 buttonsAndAxesList = SimpleNamespace()
 
 buttonsAndAxesList.startIntakeID = 1
 buttonsAndAxesList.stopIntakeID = 2
 
-buttonsAndAxesList.startOutputID = 3
-buttonsAndAxesList.stopOutputID = 4
+buttonsAndAxesList.startFuelOutakeID = 3
+buttonsAndAxesList.stopFuelOutakeID = 4
 
 buttonsAndAxesList.openGearID = 6
 buttonsAndAxesList.closeGearID = 5
@@ -37,7 +37,8 @@ positionList.closeGearDoorPosition = 0.0
 positionList.openGearDoorPosition = 1.0
 
 speedsList = SimpleNamespace()
-speedsList.outputSpeed = 0.9
+speedsList.intakeSpeed = 0.9
+speedsList.fuelOutakeSpeed = 0.9
 speedsList.deadZoneRadius = 0.1
 speedsList.minimumWheelRotation = 0.2
 
