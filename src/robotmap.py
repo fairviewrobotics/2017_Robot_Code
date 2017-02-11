@@ -47,7 +47,7 @@ encoders.fl = [2, 3]
 encoders.br = [4, 5]
 encoders.bl = [6, 7]
 
-encoders.distancePerPulse = 0.06981317007
+encoders.distancePerPulse = 0.01745329251
 
 auto = SimpleNamespace()
 auto.initialDrive = 120
