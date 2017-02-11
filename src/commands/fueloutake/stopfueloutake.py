@@ -1,9 +1,9 @@
-from wpilib.command import InstantCommand
+from wpilib.command import Command
 import subsystems
 import robotmap
 
 
-class StopFuelOutake(InstantCommand):
+class StopFuelOutake(Command):
 
     def __init__(self):
         super().__init__('Stop Fuel Outake')

@@ -1,9 +1,9 @@
-from wpilib.command import InstantCommand
+from wpilib.command import Command
 import robotmap
 import subsystems
 
 
-class StopRope(InstantCommand):
+class StopRope(Command):
 
     def __init__(self):
         super().__init__('Stop Rope')
