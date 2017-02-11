@@ -16,7 +16,7 @@ class Move(Command):
         driveTrain.blEncoder.reset()
 
     def execute(self):
-        subsystems.driveTrain.set(0.75, 0.75, 1, 0)
+        subsystems.driveTrain.set(0.6, 0, 0, 0)
 
     def end(self):
         subsystems.driveTrain.set(0, 0, 0, 0)

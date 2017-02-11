@@ -48,4 +48,4 @@ encoders.br = [4, 5]
 encoders.bl = [6, 7]
 
 auto = SimpleNamespace()
-auto.initialDrive = 0
+auto.initialDrive = 120
