@@ -7,7 +7,7 @@ import robotmap
 
 import math
 
-class Move(Command):
+class Rotate(Command):
 
     def __init__(self, degrees):
         super().__init__('Rotate')
@@ -22,11 +22,11 @@ class Move(Command):
 
     def initialize(self):
         if self.degrees >= 0:
-            subsystems.driveTrain.backLeftWheel.set(.6)
-            subsystems.driveTrain.backRightWheel.set(-.6)
+            subsystems.driveTrain.rearLeftWheel.set(.6)
+            subsystems.driveTrain.rearRightWheel.set(-.6)
         else:
-            subsystems.driveTrain.backLeftWheel.set(-.6)
-            subsystems.driveTrain.backRightWheel.set(.6)
+            subsystems.driveTrain.rearLeftWheel.set(-.6)
+            subsystems.driveTrain.rearRightWheel.set(.6)
 
     def end(self):
         subsystems.driveTrain.set(0, 0, 0, 0)
@@ -41,7 +41,7 @@ class Move(Command):
 
         circ = robotmap.auto.wheelBaseDiameter * math.pi
 
-        avgDeg = (((leftDist / circ) * 360) + ((rightDist / circ) * 360) / 2
+        avgDeg = (((leftDist / circ) * 360) + ((rightDist / circ) * 360)) / 2
 
         if avgDeg >= self.degrees:
             return True

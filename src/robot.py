@@ -3,6 +3,7 @@ import subsystems
 from commandbased import CommandBasedRobot
 
 from commands.autonomous.autonomous import Autonomous
+from commands.gear.closegear import CloseGear
 
 import operatorinput
 
@@ -22,6 +23,8 @@ class Robot(CommandBasedRobot):
         self.autonomous = Autonomous()
 
     def autonomousInit(self):
+        CloseGear().start()
+        
         self.autonomous.start()
 
     """
