@@ -32,9 +32,16 @@ class DriveTrain(Subsystem):
         print("Wheels initialized with portlist.")
 
         self.frEncoder = wpilib.Encoder(*robotmap.encoders.fr)
+        self.frEncoder.setDistancePerPulse(robotmap.encoders.distancePerPulse)
+
         self.flEncoder = wpilib.Encoder(*robotmap.encoders.fl)
+        self.flEncoder.setDistancePerPulse(robotmap.encoders.distancePerPulse)
+
         self.brEncoder = wpilib.Encoder(*robotmap.encoders.br)
+        self.brEncoder.setDistancePerPulse(robotmap.encoders.distancePerPulse)
+
         self.blEncoder = wpilib.Encoder(*robotmap.encoders.bl)
+        self.blEncoder.setDistancePerPulse(robotmap.encoders.distancePerPulse)
 
     """
         Sets default command of subsystem to be the follow joystick class.
