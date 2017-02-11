@@ -45,7 +45,7 @@ class Rotate(Command):
 
         avgDeg = (((leftDist / circ) * 360) + ((rightDist / circ) * 360)) / 2
 
-        if avgDeg >= self.degrees:
+        if avgDeg >= math.fabs(self.degrees):
             return True
         else:
             return False
