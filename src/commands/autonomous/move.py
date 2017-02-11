@@ -1,9 +1,12 @@
 from wpilib.command import Command
-import subsystems
-import robotmap
-import operatorinput as oi
+
 import math
 
+import subsystems
+
+import operatorinput as oi
+
+import robotmap
 
 class Move(Command):
 
@@ -19,14 +22,20 @@ class Move(Command):
 
         self.dist = dist
 
+    def initialize(self):
+        if dist >= 0:
+            subsystems.drivetrain.set(0.6, 0, 0, 0)
+        else:
+            subsystems.drivetrain.set(-0.6, 0, 0, 0)
+
     def execute(self):
-        subsystems.drivetrain.set(0.6, 0, 0, 0)
+        pass
 
     def end(self):
         subsystems.drivetrain.set(0, 0, 0, 0)
 
     def isFinished(self):
-        if subsystems.drivetrain.frEncoder.getDistance() > self.dist - 5:
+        if math.fabs(subsystems.drivetrain.frEncoder.getDistance()) > math.fabs(self.dist) - 5:
             return True
         else:
             return False
