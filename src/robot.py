@@ -2,7 +2,6 @@ import wpilib
 import subsystems
 from commandbased import CommandBasedRobot
 import operatorinput
-from commands.intake import runintake
 import robotmap
 
 
@@ -22,7 +21,6 @@ class Robot(CommandBasedRobot):
     """
 
     def teleopInit(self):
-        runintake.RunIntake(robotmap.speedsList.intakeSpeed).start()
         print("Remote control initialized.")
 
 if __name__ == '__main__':

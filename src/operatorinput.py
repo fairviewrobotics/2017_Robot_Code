@@ -1,7 +1,6 @@
 from wpilib.joystick import Joystick
 from wpilib.buttons.joystickbutton import JoystickButton
 
-from commands.intake.runintake import RunIntake
 from commands.outake.runoutput import RunOutput
 
 from commands.gear.closegear import CloseGear
@@ -9,7 +8,6 @@ from commands.gear.opengear import OpenGear
 
 from commands.rope.runropeintake import RunRopeIntake
 
-from commands.intake.stopintake import StopIntake
 from commands.outake.stopoutput import StopOutput
 from commands.rope.stopropeintake import StopRopeIntake
 
@@ -22,13 +20,6 @@ def init():
     global joystick
 
     joystick = Joystick(robotmap.portsList.stickID)
-
-    startIntakeButton = JoystickButton(
-        joystick, robotmap.buttonsAndAxesList.startIntakeID)
-    startIntakeButton.whenPressed(RunIntake(robotmap.speedsList.intakeSpeed))
-    stopIntakeButton = JoystickButton(
-        joystick, robotmap.buttonsAndAxesList.stopIntakeID)
-    stopIntakeButton.whenPressed(StopIntake())
 
     startOutputButton = JoystickButton(
         joystick, robotmap.buttonsAndAxesList.startOutputID)
