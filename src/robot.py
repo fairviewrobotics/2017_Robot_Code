@@ -19,13 +19,16 @@ class Robot(CommandBasedRobot):
         print("Initialized robot.")
         operatorinput.init()
 
+        self.autonomous = Autonomous()
+
     def autonomousInit(self):
-        Autonomous().start()
+        self.autonomous.start()
 
     """
     Runs once when remote control is activated, initializes teleop.
     """
     def teleopInit(self):
+        self.autonomous.cancel()
         print("Remote control initialized.")
 
 if __name__ == '__main__':
