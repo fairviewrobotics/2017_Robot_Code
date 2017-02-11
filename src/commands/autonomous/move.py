@@ -10,10 +10,10 @@ class Move(Command):
     def __init__(self):
         super().__init__('Move')
         self.requires(subsystems.driveTrain)
-        driveTrain.frEncoder.reset()
-        driveTrain.flEncoder.reset()
-        driveTrain.brEncoder.reset()
-        driveTrain.blEncoder.reset()
+        subsystems.driveTrain.frEncoder.reset()
+        subsystems.driveTrain.flEncoder.reset()
+        subsystems.driveTrain.brEncoder.reset()
+        subsystems.driveTrain.blEncoder.reset()
 
     def execute(self):
         subsystems.driveTrain.set(0.6, 0, 0, 0)
@@ -22,7 +22,7 @@ class Move(Command):
         subsystems.driveTrain.set(0, 0, 0, 0)
 
     def isFinished(self):
-        if driveTrain.frEncoder.getDistance() > robotmap.auto.initalDrive - 5:
+        if subsystems.driveTrain.frEncoder.getDistance() > robotmap.auto.initialDrive - 5:
             return True
         else:
             return False
