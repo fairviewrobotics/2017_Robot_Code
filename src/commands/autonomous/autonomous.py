@@ -1,4 +1,5 @@
 from wpilib.command.commandgroup import CommandGroup
+from wpilib.command.waitcommand import WaitCommand
 
 from .move import Move
 from .rotate import Rotate
