@@ -1,8 +1,8 @@
-import wpilib
 from wpilib.command import Command
-import subsystems
-import robotmap
 
+import subsystems
+
+import robotmap
 
 class CloseGear(Command):
 

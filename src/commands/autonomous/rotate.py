@@ -9,35 +9,37 @@ import math
 
 class Rotate(Command):
 
+
     def __init__(self, degrees):
         super().__init__('Rotate')
-        self.requires(subsystems.driveTrain)
 
-        subsystems.driveTrain.frEncoder.reset()
-        subsystems.driveTrain.flEncoder.reset()
-        subsystems.driveTrain.brEncoder.reset()
-        subsystems.driveTrain.blEncoder.reset()
+        self.requires(subsystems.drivetrain)
+
+        subsystems.drivetrain.frEncoder.reset()
+        subsystems.drivetrain.flEncoder.reset()
+        subsystems.drivetrain.brEncoder.reset()
+        subsystems.drivetrain.blEncoder.reset()
 
         self.degrees = degrees
 
     def initialize(self):
         if self.degrees >= 0:
-            subsystems.driveTrain.rearLeftWheel.set(.6)
-            subsystems.driveTrain.rearRightWheel.set(-.6)
+            subsystems.drivetrain.rearLeftWheel.set(.6)
+            subsystems.drivetrain.rearRightWheel.set(-.6)
         else:
-            subsystems.driveTrain.rearLeftWheel.set(-.6)
-            subsystems.driveTrain.rearRightWheel.set(.6)
+            subsystems.drivetrain.rearLeftWheel.set(-.6)
+            subsystems.drivetrain.rearRightWheel.set(.6)
 
     def end(self):
-        subsystems.driveTrain.set(0, 0, 0, 0)
+        subsystems.drivetrain.set(0, 0, 0, 0)
 
     def isFinished(self):
         if self.degrees >= 0:
-            leftDist = subsystems.driveTrain.backLeft.getDistance()
-            rightDist = -1 * subsystems.driveTrain.backRight.getDistance()
+            leftDist = subsystems.drivetrain.backLeft.getDistance()
+            rightDist = -1 * subsystems.drivetrain.backRight.getDistance()
         else:
-            leftDist = -1 * subsystems.driveTrain.backLeft.getDistance()
-            rightDist = subsystems.driveTrain.backRight.getDistance()
+            leftDist = -1 * subsystems.drivetrain.backLeft.getDistance()
+            rightDist = subsystems.drivetrain.backRight.getDistance()
 
         circ = robotmap.auto.wheelBaseDiameter * math.pi
 

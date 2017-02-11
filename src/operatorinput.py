@@ -7,11 +7,7 @@ from commands.fueloutake.stopfueloutake import StopFuelOutake
 from commands.gear.closegear import CloseGear
 from commands.gear.opengear import OpenGear
 
-from commands.rope.runrope import RunRope
-from commands.rope.stoprope import StopRope
-
 import robotmap
-
 
 joystick = None
 

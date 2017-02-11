@@ -1,18 +1,19 @@
-from .drivetrain import DriveTrain
+from .drivetrain import Drivetrain
 from .fueloutake import FuelOutake
 from .gear import Gear
 from .rope import Rope
 
-driveTrain = None
+drivetrain = None
 fuelOutake = None
 gear = None
 rope = None
 
+
 def init():
 
-    global driveTrain, fuelOutake, gear, rope
+    global drivetrain, fuelOutake, gear, rope
 
-    driveTrain = DriveTrain()
+    drivetrain = Drivetrain()
     fuelOutake = FuelOutake()
     gear = Gear()
     rope = Rope()
