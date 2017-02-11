@@ -4,6 +4,7 @@ import subsystems
 
 import robotmap
 
+
 class CloseGear(Command):
 
     def __init__(self):

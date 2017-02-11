@@ -7,8 +7,8 @@ import robotmap
 
 import math
 
-class Rotate(Command):
 
+class Rotate(Command):
 
     def __init__(self, degrees):
         super().__init__('Rotate')

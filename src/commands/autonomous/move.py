@@ -8,6 +8,7 @@ import operatorinput as oi
 
 import robotmap
 
+
 class Move(Command):
 
     def __init__(self, dist):
@@ -35,7 +36,9 @@ class Move(Command):
         subsystems.drivetrain.set(0, 0, 0, 0)
 
     def isFinished(self):
-        if math.fabs(subsystems.drivetrain.frEncoder.getDistance()) > math.fabs(self.dist) - 5:
+        if math.fabs(
+                subsystems.drivetrain.frEncoder.getDistance()) > math.fabs(
+                self.dist) - 5:
             return True
         else:
             return False

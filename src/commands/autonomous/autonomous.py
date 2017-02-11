@@ -8,6 +8,7 @@ from commands.gear.opengear import OpenGear
 
 import robotmap
 
+
 class Autonomous(CommandGroup):
 
     def __init__(self):
