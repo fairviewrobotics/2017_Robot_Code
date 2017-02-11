@@ -20,8 +20,8 @@ portsList.fuelOutakeMotorID = 6
 
 buttonsAndAxesList = SimpleNamespace()
 
-buttonsAndAxesList.startFuelOutakeID = 7
-buttonsAndAxesList.stopFuelOutakeID = 8
+buttonsAndAxesList.startFuelOutakeID = 1
+buttonsAndAxesList.stopFuelOutakeID = 2
 
 buttonsAndAxesList.openGearID = 6
 buttonsAndAxesList.closeGearID = 5
