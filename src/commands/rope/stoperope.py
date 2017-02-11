@@ -3,14 +3,14 @@ import robotmap
 import subsystems
 
 
-class StopRopeIntake(InstantCommand):
+class StopRope(InstantCommand):
 
     def __init__(self):
-        super().__init__('Stop Rope Intake')
-        self.requires(subsystems.ropeIntake)
+        super().__init__('Stop Rope')
+        self.requires(subsystems.rope)
 
     def initialize(self):
-        subsystems.ropeIntake.set(0)
+        subsystems.rope.set(0)
 
     def isFinished(self):
         return super().isFinished()

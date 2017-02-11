@@ -7,8 +7,8 @@ from commands.fueloutake.stopfueloutake import StopFuelOutake
 from commands.gear.closegear import CloseGear
 from commands.gear.opengear import OpenGear
 
-from commands.rope.runropeintake import RunRopeIntake
-from commands.rope.stopropeintake import StopRopeIntake
+from commands.rope.runrope import RunRope
+from commands.rope.stoprope import StopRope
 
 import robotmap
 
@@ -36,10 +36,10 @@ def init():
     closeGearDoorButton.whenPressed(
         CloseGear())
 
-    startRopeIntakeButton = JoystickButton(
+    startRopeButton = JoystickButton(
         joystick, robotmap.buttonsAndAxesList.startRopeID)
-    startRopeIntakeButton.whenPressed(
-        RunRopeIntake(robotmap.speedsList.intakeSpeed))
-    stopRopeIntakeButton = JoystickButton(
+    startRopeButton.whenPressed(
+        RunRope(robotmap.speedsList.ropeSpeed))
+    stopRopeButton = JoystickButton(
         joystick, robotmap.buttonsAndAxesList.stopRopeID)
-    stopRopeIntakeButton.whenPressed(StopRopeIntake())
+    stopRopeButton.whenPressed(StopRope())

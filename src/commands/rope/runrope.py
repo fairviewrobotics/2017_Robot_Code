@@ -3,18 +3,18 @@ import robotmap
 import subsystems
 
 
-class RunRopeIntake(Command):
+class RunRope(Command):
 
     def __init__(self, speed):
-        super().__init__('Run Rope Intake')
-        self.requires(subsystems.ropeIntake)
+        super().__init__('Run Rope')
+        self.requires(subsystems.rope)
         self.speed = speed
 
     def execute(self):
-        subsystems.ropeIntake.set(self.speed)
+        subsystems.rope.set(self.speed)
 
     def isFinished(self):
         return super().isFinished()
 
     def end(self):
-        subsystems.ropeIntake.set(0)
+        subsystems.rope.set(0)

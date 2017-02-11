@@ -3,10 +3,10 @@ from wpilib.command.subsystem import Subsystem
 import robotmap
 
 
-class RopeIntake(Subsystem):
+class Rope(Subsystem):
 
     def __init__(self):
-        super().__init__('Rope Intake')
+        super().__init__('Rope Mechanism')
         self.motor = wpilib.Talon(robotmap.portsList.ropeMotorID)
 
     def set(self, speed):
