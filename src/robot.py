@@ -37,14 +37,28 @@ class Robot(CommandBasedRobot):
 
         self.autonomous.start()
 
+    def autonomousPeriodic(self):
+        """Periodic code for the autonomous period.
+
+        Called every 20ms or so.
+        """
+        wpilib.command.Scheduler.getInstance().run()
+
     def teleopInit(self):
         """Prepares the code for the tele-operated period.
 
         Runs once when remote control is activated
         """
         self.autonomous.cancel()
-        
+
         print("Remote control initialized.")
+
+    def teleopPeriodic(self):
+        """Periodic code for the tele-operated period.
+
+        Called every 20ms or so.
+        """
+        wpilib.command.Scheduler.getInstance().run()
 
 if __name__ == '__main__':
     wpilib.run(Robot)
