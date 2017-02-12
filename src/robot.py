@@ -37,6 +37,8 @@ class Robot(CommandBasedRobot):
 
         self.autonomous.start()
 
+        print("Autonomous initialized")
+
     def autonomousPeriodic(self):
         """Periodic code for the autonomous period.
 
@@ -51,7 +53,7 @@ class Robot(CommandBasedRobot):
         """
         self.autonomous.cancel()
 
-        print("Remote control initialized.")
+        print("Tele-op initialized.")
 
     def teleopPeriodic(self):
         """Periodic code for the tele-operated period.
