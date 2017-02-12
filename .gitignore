@@ -1,4 +1,6 @@
+# Ignore cache files/folders
 __pycache__/
+.cache/
 
 # Ignore deploy config from version control
 .deploy_cfg
