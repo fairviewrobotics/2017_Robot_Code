@@ -24,7 +24,7 @@ class Move(Command):
         self.dist = dist
 
     def initialize(self):
-        if dist >= 0:
+        if self.dist >= 0:
             subsystems.drivetrain.set(0.6, 0, 0, 0)
         else:
             subsystems.drivetrain.set(-0.6, 0, 0, 0)
