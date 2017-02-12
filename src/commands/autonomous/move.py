@@ -24,13 +24,13 @@ class Move(Command):
         self.dist = dist
 
     def initialize(self):
+        pass
+
+    def execute(self):
         if self.dist >= 0:
             subsystems.drivetrain.set(0.6, 0, 0, 0)
         else:
             subsystems.drivetrain.set(-0.6, 0, 0, 0)
-
-    def execute(self):
-        pass
 
     def end(self):
         subsystems.drivetrain.set(0, 0, 0, 0)

@@ -23,6 +23,9 @@ class Rotate(Command):
         self.degrees = degrees
 
     def initialize(self):
+        pass
+
+    def execute(self):
         if self.degrees >= 0:
             subsystems.drivetrain.rearLeftWheel.set(.6)
             subsystems.drivetrain.rearRightWheel.set(-.6)
