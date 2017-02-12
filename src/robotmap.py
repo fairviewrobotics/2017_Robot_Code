@@ -51,8 +51,8 @@ encoders.distancePerPulse = 0.01745329251
 
 auto = SimpleNamespace()
 
-auto.initialDrive = 120
-auto.stageTwoDrive = 24
-auto.stageThreeDrive = -12
+auto.initialDrive = -119.69
+auto.stageTwoDrive = -21.29
+auto.stageThreeDrive = 12
 
 auto.wheelBaseDiameter = 21.5
