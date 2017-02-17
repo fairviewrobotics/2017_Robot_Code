@@ -30,6 +30,7 @@ buttonsAndAxesList.rope60PercentID = 3
 buttonsAndAxesList.rope100PercentID = 4
 
 buttonsAndAxesList.ropeAxis = 4
+buttonsAndAxesList.fuelOutakeAxis = 3
 
 positionList = SimpleNamespace()
 positionList.closeGearDoorPosition = 0.0

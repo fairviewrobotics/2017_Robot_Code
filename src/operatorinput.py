@@ -16,13 +16,6 @@ def init():
 
     joystick = Joystick(robotmap.portsList.stickID)
 
-    startFuelOutakeButton = JoystickButton(
-        joystick, robotmap.buttonsAndAxesList.startFuelOutakeID)
-    startFuelOutakeButton.whenPressed(RunFuelOutake(robotmap.speedsList.fuelOutakeSpeed))
-    stopFuelOutakeButton = JoystickButton(
-        joystick, robotmap.buttonsAndAxesList.stopFuelOutakeID)
-    stopFuelOutakeButton.whenPressed(StopFuelOutake())
-
     openGearDoorButton = JoystickButton(
         joystick, robotmap.buttonsAndAxesList.openGearID)
     openGearDoorButton.whenPressed(

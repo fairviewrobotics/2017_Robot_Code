@@ -45,6 +45,16 @@ class FollowJoystick(Command):
                 robotmap.buttonsAndAxesList.ropeAxis) ** 3
             subsystems.rope.set(value)
 
+        if oi.joystick.getRawButton(
+                robotmap.buttonsAndAxesList.startFuelOutakeID):
+            subsystems.fuelOutake.set(0.6)
+        elif oi.joystick.getRawButton(robotmap.buttonsAndAxesList.rope100PercentID):
+            subsystems.fuelOutake.set(1)
+        else:
+            value = oi.joystick.getRawAxis(
+                robotmap.buttonsAndAxesList.fuelOutakeAxis) ** 3
+            subsystems.fuelOutake.set(value)
+
     def end(self):
         subsystems.drivetrain.set(0, 0, 0, 0)
 
