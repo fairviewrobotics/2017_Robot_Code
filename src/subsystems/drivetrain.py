@@ -23,17 +23,17 @@ class Drivetrain(Subsystem):
         """
         super().__init__('Drivetrain')
 
-        frontLeftWheel = wpilib.Talon(robotmap.portsList.frontLeftWheelID)
-        frontRightWheel = wpilib.Talon(
+        self.frontLeftWheel = wpilib.Talon(robotmap.portsList.frontLeftWheelID)
+        self.frontRightWheel = wpilib.Talon(
             robotmap.portsList.frontRightWheelID)
-        backLeftWheel = wpilib.Talon(robotmap.portsList.rearLeftWheelID)
-        backRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
+        self.backLeftWheel = wpilib.Talon(robotmap.portsList.rearLeftWheelID)
+        self.backRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
 
         self.robotDrive = wpilib.RobotDrive(
-            frontLeftWheel,
-            backLeftWheel,
-            frontRightWheel,
-            backRightWheel)
+            self.frontLeftWheel,
+            self.backLeftWheel,
+            self.frontRightWheel,
+            self.backRightWheel)
 
         self.robotDrive.setInvertedMotor(
             wpilib.RobotDrive.MotorType.kRearLeft, True)
@@ -76,3 +76,8 @@ class Drivetrain(Subsystem):
         wpilib.SmartDashboard.putDouble("Front Right Encoder Distance", str(subsystems.drivetrain.frEncoder.getDistance()))
         wpilib.SmartDashboard.putDouble("Back Left Encoder Distance", str(subsystems.drivetrain.blEncoder.getDistance()))
         wpilib.SmartDashboard.putDouble("Back Right Encoder Distance", str(subsystems.drivetrain.brEncoder.getDistance()))
+
+        wpilib.SmartDashboard.putDouble("Front Left Wheel Speed", str(self.frontLeftWheel.get()))
+        wpilib.SmartDashboard.putDouble("Front Right Wheel Speed", str(self.frontRightWheel.get()))
+        wpilib.SmartDashboard.putDouble("Back Left Wheel Speed", str(self.backLeftWheel.get()))
+        wpilib.SmartDashboard.putDouble("Back Right Wheel Speed", str(self.backRightWheel.get()))
