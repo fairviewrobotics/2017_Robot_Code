@@ -23,22 +23,17 @@ class Drivetrain(Subsystem):
         """
         super().__init__('Drivetrain')
 
-        self.frontLeftWheel = wpilib.Talon(robotmap.portsList.frontLeftWheelID)
-        self.frontLeftWheel.setInverted(True)
-
-        self.frontRightWheel = wpilib.Talon(
+        frontLeftWheel = wpilib.Talon(robotmap.portsList.frontLeftWheelID)
+        frontRightWheel = wpilib.Talon(
             robotmap.portsList.frontRightWheelID)
-
-        self.rearLeftWheel = wpilib.Talon(robotmap.portsList.rearLeftWheelID)
-        self.rearLeftWheel.setInverted(True)
-
-        self.rearRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
+        backLeftWheel = wpilib.Talon(robotmap.portsList.rearLeftWheelID)
+        backRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
 
         self.robotDrive = wpilib.RobotDrive(
             self.frontLeftWheel,
-            self.rearLeftWheel,
+            self.backLeftWheel,
             self.frontRightWheel,
-            self.rearRightWheel)
+            self.backRightWheel)
 
         self.robotDrive.setInvertedMotor(
             wpilib.RobotDrive.MotorType.kRearLeft, True)
@@ -74,7 +69,5 @@ class Drivetrain(Subsystem):
         """
         if robotmap.stateList.fourWheelDrive:
             self.robotDrive.arcadeDrive(y, x)
-            print("Front right distance: " + str(subsystems.drivetrain.frEncoder.getDistance()))
         else:
             self.robotDrive.mecanumDrive_Cartesian(x, y, z, gyro)
-            print("Front right distance: " + str(subsystems.drivetrain.frEncoder.getDistance()))
