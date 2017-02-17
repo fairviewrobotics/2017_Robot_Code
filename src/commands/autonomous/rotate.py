@@ -38,11 +38,11 @@ class Rotate(Command):
 
     def isFinished(self):
         if self.degrees >= 0:
-            leftDist = subsystems.drivetrain.backLeft.getDistance()
-            rightDist = -1 * subsystems.drivetrain.backRight.getDistance()
+            leftDist = subsystems.drivetrain.blEncoder.getDistance()
+            rightDist = -1 * subsystems.drivetrain.brEncoder.getDistance()
         else:
-            leftDist = -1 * subsystems.drivetrain.backLeft.getDistance()
-            rightDist = subsystems.drivetrain.backRight.getDistance()
+            leftDist = -1 * subsystems.drivetrain.blEncoder.getDistance()
+            rightDist = subsystems.drivetrain.brEncoder.getDistance()
 
         circ = robotmap.auto.wheelBaseDiameter * math.pi
 

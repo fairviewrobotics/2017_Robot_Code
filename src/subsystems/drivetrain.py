@@ -3,6 +3,8 @@ from wpilib.command.subsystem import Subsystem
 
 from commands.followjoystick import FollowJoystick
 
+import subsystems
+
 import robotmap
 
 
@@ -72,7 +74,7 @@ class Drivetrain(Subsystem):
         """
         if robotmap.stateList.fourWheelDrive:
             self.robotDrive.arcadeDrive(y, x)
-            print("Robot is using arcadeDrive.")
+            print("Front right distance: " + str(subsystems.drivetrain.frEncoder.getDistance()))
         else:
             self.robotDrive.mecanumDrive_Cartesian(x, y, z, gyro)
-            print("Robot is using mecanumDrive_Cartesian")
+            print("Front right distance: " + str(subsystems.drivetrain.frEncoder.getDistance()))

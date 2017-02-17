@@ -20,6 +20,7 @@ class FuelOutake(Subsystem):
         super().__init__('Fuel Outake')
 
         self.motor = wpilib.Talon(robotmap.portsList.fuelOutakeMotorID)
+        self.motor.setInverted(True)
 
     def set(self, speed):
         """Sets the fuel intake motor speed value.
