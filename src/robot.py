@@ -37,6 +37,13 @@ class Robot(CommandBasedRobot):
 
         self.autoProgram = AutonomousStraight()
 
+        wpilib.SmartDashboard.putData(wpilib.command.Scheduler.getInstance())
+
+        wpilib.SmartDashboard.putData(subsystems.drivetrain)
+        wpilib.SmartDashboard.putData(subsystems.fuelOutake)
+        wpilib.SmartDashboard.putData(subsystems.gear)
+        wpilib.SmartDashboard.putData(subsystems.rope)
+
         print("Initialized robot")
 
     def autonomousInit(self):
