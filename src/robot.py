@@ -3,7 +3,10 @@ from commandbased import CommandBasedRobot
 
 import subsystems
 
-from commands.autonomous.autonomous import Autonomous
+from commands.autonomous.autonomousleft import AutonomousLeft
+from commands.autonomous.autonomousright import AutonomousRight
+from commands.autonomous.autonomousstraight import AutonomousStraight
+
 from commands.gear.closegear import CloseGear
 
 import operatorinput
@@ -26,7 +29,11 @@ class Robot(CommandBasedRobot):
         subsystems.init()
         operatorinput.init()
 
-        self.autonomous = Autonomous()
+        self.autoChooser = wpilib.SendableChooser()
+        self.autoChooser.addDefault("Straight Autonomous", AutonomousStraight())
+        self.autoChooser.addObject("Left Autonomous", AutonomousLeft())
+        self.autoChooser.addObject("Right Autonomous", AutonomousRight())
+        wpilib.SmartDashboard.putData("Autonomous Mode Chooser", self.autoChooser)
 
         print("Initialized robot")
 
@@ -35,7 +42,8 @@ class Robot(CommandBasedRobot):
         """
         CloseGear().start()
 
-        self.autonomous.start()
+        self.autoProgram = self.autoChooser.getSelected()
+        self.autoProgram.start()
 
         print("Autonomous initialized")
 
@@ -51,7 +59,7 @@ class Robot(CommandBasedRobot):
 
         Runs once when remote control is activated
         """
-        self.autonomous.cancel()
+        self.autoProgram.cancel()
 
         print("Tele-op initialized.")
 

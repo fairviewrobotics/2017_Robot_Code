@@ -54,5 +54,6 @@ auto = SimpleNamespace()
 auto.initialDrive = -119.69
 auto.stageTwoDrive = -21.29
 auto.stageThreeDrive = 12
+auto.straightDrive = -103.8
 
 auto.wheelBaseDiameter = 21.5

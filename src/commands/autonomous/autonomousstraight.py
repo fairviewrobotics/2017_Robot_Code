@@ -9,14 +9,12 @@ from commands.gear.opengear import OpenGear
 import robotmap
 
 
-class Autonomous(CommandGroup):
+class AutonomousStraight(CommandGroup):
 
     def __init__(self):
-        super().__init__('Autonomous Program')
+        super().__init__('Autonomous Program (Straight)')
 
-        self.addSequential(Move(robotmap.auto.initialDrive))
-        self.addSequential(Rotate(-60))
-        self.addSequential(Move(robotmap.auto.stageTwoDrive))
+        self.addSequential(Move(robotmap.auto.straightDrive))
         self.addSequential(OpenGear())
         self.addSequential(WaitCommand(1))
         self.addSequential(Move(robotmap.auto.stageThreeDrive))
