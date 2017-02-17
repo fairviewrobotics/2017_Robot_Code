@@ -30,10 +30,10 @@ class Drivetrain(Subsystem):
         backRightWheel = wpilib.Talon(robotmap.portsList.rearRightWheelID)
 
         self.robotDrive = wpilib.RobotDrive(
-            self.frontLeftWheel,
-            self.backLeftWheel,
-            self.frontRightWheel,
-            self.backRightWheel)
+            frontLeftWheel,
+            backLeftWheel,
+            frontRightWheel,
+            backRightWheel)
 
         self.robotDrive.setInvertedMotor(
             wpilib.RobotDrive.MotorType.kRearLeft, True)
@@ -71,3 +71,8 @@ class Drivetrain(Subsystem):
             self.robotDrive.arcadeDrive(y, x)
         else:
             self.robotDrive.mecanumDrive_Cartesian(x, y, z, gyro)
+
+        wpilib.SmartDashboard.putDouble("Front Left Encoder Distance", str(subsystems.drivetrain.flEncoder.getDistance()))
+        wpilib.SmartDashboard.putDouble("Front Right Encoder Distance", str(subsystems.drivetrain.frEncoder.getDistance()))
+        wpilib.SmartDashboard.putDouble("Back Left Encoder Distance", str(subsystems.drivetrain.blEncoder.getDistance()))
+        wpilib.SmartDashboard.putDouble("Back Right Encoder Distance", str(subsystems.drivetrain.brEncoder.getDistance()))

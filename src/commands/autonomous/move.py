@@ -36,7 +36,6 @@ class Move(Command):
         subsystems.drivetrain.set(0, 0, 0, 0)
 
     def isFinished(self):
-        print("Front right distance: " + str(subsystems.drivetrain.frEncoder.getDistance()))
         if math.fabs(
                 subsystems.drivetrain.frEncoder.getDistance()) > math.fabs(
                 self.dist) - 5:
