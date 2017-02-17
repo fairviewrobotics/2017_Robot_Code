@@ -26,7 +26,6 @@ class Drivetrain(Subsystem):
 
         self.frontRightWheel = wpilib.Talon(
             robotmap.portsList.frontRightWheelID)
-        self.frontRightWheel.setInverted(True)
 
         self.rearLeftWheel = wpilib.Talon(robotmap.portsList.rearLeftWheelID)
         self.rearLeftWheel.setInverted(True)
@@ -41,8 +40,6 @@ class Drivetrain(Subsystem):
 
         self.robotDrive.setInvertedMotor(
             wpilib.RobotDrive.MotorType.kRearLeft, True)
-        self.robotDrive.setInvertedMotor(
-            wpilib.RobotDrive.MotorType.kFrontRight, True)
         self.robotDrive.setInvertedMotor(
             wpilib.RobotDrive.MotorType.kFrontLeft, True)
 

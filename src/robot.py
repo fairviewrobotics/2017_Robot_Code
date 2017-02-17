@@ -35,6 +35,8 @@ class Robot(CommandBasedRobot):
         self.autoChooser.addObject("Right Autonomous", AutonomousRight())
         wpilib.SmartDashboard.putData("Autonomous Mode Chooser", self.autoChooser)
 
+        self.autoProgram = AutonomousStraight()
+
         print("Initialized robot")
 
     def autonomousInit(self):
