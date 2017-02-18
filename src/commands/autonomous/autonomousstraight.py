@@ -15,6 +15,6 @@ class AutonomousStraight(CommandGroup):
         super().__init__('Autonomous Program (Straight)')
 
         self.addSequential(Move(robotmap.auto.straightDrive))
-        self.addSequential(OpenGear())
+        self.addParallel(OpenGear())
         self.addSequential(DriveWaitCommand(1))
         self.addSequential(Move(robotmap.auto.stageThreeDrive))
