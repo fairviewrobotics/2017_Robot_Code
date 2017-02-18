@@ -15,15 +15,16 @@ class Rotate(Command):
 
         self.requires(subsystems.drivetrain)
 
+        self.degrees = degrees
+
+    def initialize(self):
         subsystems.drivetrain.frEncoder.reset()
         subsystems.drivetrain.flEncoder.reset()
         subsystems.drivetrain.brEncoder.reset()
         subsystems.drivetrain.blEncoder.reset()
 
-        self.degrees = degrees
-
-    def initialize(self):
-        pass
+        print("Rotate Initialized")
+        subsystems.drivetrain.printEncoderValues()
 
     def execute(self):
         if self.degrees >= 0:
@@ -47,6 +48,8 @@ class Rotate(Command):
         avgDeg = (((leftDist / circ) * 360) + ((rightDist / circ) * 360)) / 2
 
         if avgDeg >= math.fabs(self.degrees):
+            print("Rotate finished")
+            subsystems.drivetrain.printEncoderValues()
             return True
         else:
             return False

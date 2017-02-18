@@ -83,3 +83,13 @@ class Drivetrain(Subsystem):
         wpilib.SmartDashboard.putDouble("Front Right Wheel Speed", str(self.frontRightWheel.get()))
         wpilib.SmartDashboard.putDouble("Back Left Wheel Speed", str(self.backLeftWheel.get()))
         wpilib.SmartDashboard.putDouble("Back Right Wheel Speed", str(self.backRightWheel.get()))
+
+    def printEncoderValues(self):
+        """Prints current encoder distance values.
+        """
+        print("Encoder distance values:\n")
+
+        print("Front Left Encoder Distance: " + str(subsystems.drivetrain.flEncoder.getDistance()))
+        print("Front Right Encoder Distance: " + str(subsystems.drivetrain.frEncoder.getDistance()))
+        print("Back Left Encoder Distance: " + str(subsystems.drivetrain.blEncoder.getDistance()))
+        print("Back Right Encoder Distance: " + str(subsystems.drivetrain.brEncoder.getDistance()))
