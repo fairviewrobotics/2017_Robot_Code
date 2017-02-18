@@ -36,9 +36,9 @@ class Move(Command):
         subsystems.drivetrain.set(0, 0, 0, 0)
 
     def isFinished(self):
-        if math.fabs(
-                subsystems.drivetrain.frEncoder.getDistance()) > math.fabs(
-                self.dist) - 5:
+        avgDist = (math.fabs(subsystems.drivetrain.frEncoder.getDistance()) + math.fabs(subsystems.drivetrain.flEncoder.getDistance()) + math.fabs(subsystems.drivetrain.blEncoder.getDistance())) / 3
+
+        if avgDist > math.fabs(self.dist) - 5:
             return True
         else:
             return False

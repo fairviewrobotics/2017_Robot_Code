@@ -44,7 +44,8 @@ class Rotate(Command):
 
         circ = robotmap.auto.wheelBaseDiameter * math.pi
 
-        avgDeg = (((leftDist / circ) * 360) '''+ ((rightDist / circ) * 360)''') / 2
+        # avgDeg = (((leftDist / circ) * 360) + ((rightDist / circ) * 360)) / 2
+        avgDeg = (leftDist / circ) * 360
 
         if avgDeg >= math.fabs(self.degrees):
             return True
