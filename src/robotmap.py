@@ -53,8 +53,8 @@ encoders.distancePerPulse = (math.pi * 8 / 360) * (151 / 120) * (120 / 116)
 
 auto = SimpleNamespace()
 
-auto.initialDrive = -119.69
-auto.stageTwoDrive = -21.29
+auto.initialDrive = -62.00
+auto.stageTwoDrive = -33.29
 auto.stageThreeDrive = 12
 auto.straightDrive = -103.8
 

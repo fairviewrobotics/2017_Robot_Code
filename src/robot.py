@@ -41,7 +41,7 @@ class Robot(CommandBasedRobot):
 
         wpilib.SmartDashboard.putData("Autonomous Mode Chooser", self.autoChooser)
 
-        self.autoProgram = AutonomousLeft()
+        self.autoProgram = AutonomousRight()
 
         wpilib.SmartDashboard.putData('Scheduler', wpilib.command.Scheduler.getInstance())
 

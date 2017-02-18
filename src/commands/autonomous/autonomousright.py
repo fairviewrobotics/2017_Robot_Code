@@ -5,6 +5,7 @@ from .rotate import Rotate
 from .drivewaitcommand import DriveWaitCommand
 
 from commands.gear.opengear import OpenGear
+from commands.gear.closegear import CloseGear
 
 import robotmap
 
@@ -14,6 +15,7 @@ class AutonomousRight(CommandGroup):
     def __init__(self):
         super().__init__('Autonomous Program (Turn Right)')
 
+        self.addParallel(CloseGear())
         self.addSequential(Move(robotmap.auto.initialDrive))
         self.addSequential(Rotate(60))
         self.addSequential(Move(robotmap.auto.stageTwoDrive))
