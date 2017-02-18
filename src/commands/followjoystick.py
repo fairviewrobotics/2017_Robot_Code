@@ -55,6 +55,13 @@ class FollowJoystick(Command):
                 robotmap.buttonsAndAxesList.fuelOutakeAxis) ** 3
             subsystems.fuelOutake.set(value)
 
+        if oi.joystick.getRawButton(
+            robotmap.buttonsAndAxesList.inverseDirectionID):
+            if subsystems.drivetrain.inverted:
+                subsystems.drivetrain.inverted = False
+            else:
+                subsystems.drivetrain.inverted = True
+
     def end(self):
         subsystems.drivetrain.set(0, 0, 0, 0)
 

@@ -30,6 +30,8 @@ buttonsAndAxesList.closeGearID = 5
 buttonsAndAxesList.rope60PercentID = 3
 buttonsAndAxesList.rope100PercentID = 4
 
+buttonsAndAxesList.inverseDirectionID = 8
+
 buttonsAndAxesList.ropeAxis = 4
 buttonsAndAxesList.fuelOutakeAxis = 3
 

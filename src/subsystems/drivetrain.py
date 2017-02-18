@@ -54,6 +54,8 @@ class Drivetrain(Subsystem):
         self.blEncoder.setDistancePerPulse(robotmap.encoders.distancePerPulse)
         self.blEncoder.setReverseDirection(True)
 
+        self.inverted = False
+
         print("Drivetrain object created")
 
     def initDefaultCommand(self):
@@ -69,6 +71,9 @@ class Drivetrain(Subsystem):
         """Sets motor values via `robotDrive` based joystick x, y, and z axis
         values and whether we are using mecanum or four wheel drive.
         """
+        if self.inverted == True:
+            y = -1 * y
+
         if robotmap.stateList.fourWheelDrive:
             self.robotDrive.arcadeDrive(y, x)
         else:
