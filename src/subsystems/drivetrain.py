@@ -45,12 +45,14 @@ class Drivetrain(Subsystem):
 
         self.flEncoder = wpilib.Encoder(*robotmap.encoders.fl)
         self.flEncoder.setDistancePerPulse(robotmap.encoders.distancePerPulse)
+        self.flEncoder.setReverseDirection(True)
 
         self.brEncoder = wpilib.Encoder(*robotmap.encoders.br)
         self.brEncoder.setDistancePerPulse(robotmap.encoders.distancePerPulse)
 
         self.blEncoder = wpilib.Encoder(*robotmap.encoders.bl)
         self.blEncoder.setDistancePerPulse(robotmap.encoders.distancePerPulse)
+        self.blEncoder.setReverseDirection(True)
 
         print("Drivetrain object created")
 
