@@ -35,14 +35,14 @@ class Robot(CommandBasedRobot):
         self.autoChooser.addObject("Right Autonomous", AutonomousRight())
         wpilib.SmartDashboard.putData("Autonomous Mode Chooser", self.autoChooser)
 
-        self.autoProgram = AutonomousStraight()
+        self.autoProgram = AutonomousLeft()
 
-        wpilib.SmartDashboard.putData(wpilib.command.Scheduler.getInstance())
+        wpilib.SmartDashboard.putData('Scheduler', wpilib.command.Scheduler.getInstance())
 
-        wpilib.SmartDashboard.putData(subsystems.drivetrain)
-        wpilib.SmartDashboard.putData(subsystems.fuelOutake)
-        wpilib.SmartDashboard.putData(subsystems.gear)
-        wpilib.SmartDashboard.putData(subsystems.rope)
+        wpilib.SmartDashboard.putData('Drivetrain', subsystems.drivetrain)
+        wpilib.SmartDashboard.putData('Fuel Outake', subsystems.fuelOutake)
+        wpilib.SmartDashboard.putData('Gear Mech', subsystems.gear)
+        wpilib.SmartDashboard.putData('Rope Mech', subsystems.rope)
 
         print("Initialized robot")
 
@@ -51,7 +51,7 @@ class Robot(CommandBasedRobot):
         """
         CloseGear().start()
 
-        self.autoProgram = self.autoChooser.getSelected()
+        # self.autoProgram = self.autoChooser.getSelected()
         self.autoProgram.start()
 
         print("Autonomous initialized")
