@@ -1,8 +1,8 @@
 from wpilib.command.commandgroup import CommandGroup
-from wpilib.command.waitcommand import WaitCommand
 
 from .move import Move
 from .rotate import Rotate
+from .drivewaitcommand import DriveWaitCommand
 
 from commands.gear.opengear import OpenGear
 
@@ -18,5 +18,5 @@ class AutonomousLeft(CommandGroup):
         self.addSequential(Rotate(-60))
         self.addSequential(Move(robotmap.auto.stageTwoDrive))
         self.addSequential(OpenGear())
-        self.addSequential(WaitCommand(1))
+        self.addSequential(DriveWaitCommand(1))
         self.addSequential(Move(robotmap.auto.stageThreeDrive))
