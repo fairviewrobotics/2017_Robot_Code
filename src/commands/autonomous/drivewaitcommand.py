@@ -11,7 +11,7 @@ class DriveWaitCommand(wpilib.command.TimedCommand):
         pass
 
     def execute(self):
-        subsystems.set(0, 0, 0, 0)
+        subsystems.drivetrain.set(0, 0, 0, 0)
 
     def end(self):
         pass
