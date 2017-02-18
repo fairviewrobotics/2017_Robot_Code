@@ -1,4 +1,5 @@
 from types import SimpleNamespace
+import math
 
 stateList = SimpleNamespace()
 stateList.fourWheelDrive = True  # False if Mecanum
@@ -48,7 +49,7 @@ encoders.fl = [2, 3]
 encoders.br = [4, 5]
 encoders.bl = [6, 7]
 
-encoders.distancePerPulse = 0.01745329251
+encoders.distancePerPulse = math.pi * 8 / 360
 
 auto = SimpleNamespace()
 
