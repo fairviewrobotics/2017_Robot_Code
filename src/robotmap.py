@@ -49,7 +49,7 @@ encoders.fl = [2, 3]
 encoders.br = [4, 5]
 encoders.bl = [6, 7]
 
-encoders.distancePerPulse = math.pi * 8 / 360
+encoders.distancePerPulse = (math.pi * 8 / 360) * (151 / 120) * (120 / 116)
 
 auto = SimpleNamespace()
 

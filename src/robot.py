@@ -7,6 +7,9 @@ from commands.autonomous.autonomousleft import AutonomousLeft
 from commands.autonomous.autonomousright import AutonomousRight
 from commands.autonomous.autonomousstraight import AutonomousStraight
 
+from commands.autonomous.move import Move
+from commands.autonomous.rotate import Rotate
+
 from commands.gear.closegear import CloseGear
 
 import operatorinput
@@ -33,6 +36,9 @@ class Robot(CommandBasedRobot):
         self.autoChooser.addDefault("Straight Autonomous", AutonomousStraight())
         self.autoChooser.addObject("Left Autonomous", AutonomousLeft())
         self.autoChooser.addObject("Right Autonomous", AutonomousRight())
+        self.autoChooser.addObject("Straigh 1 foot", Move(12))
+        self.autoChooser.addObject("Rotate 90 degrees", Rotate(90))
+
         wpilib.SmartDashboard.putData("Autonomous Mode Chooser", self.autoChooser)
 
         self.autoProgram = AutonomousLeft()

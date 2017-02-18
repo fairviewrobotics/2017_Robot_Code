@@ -28,9 +28,9 @@ class Rotate(Command):
 
     def execute(self):
         if self.degrees >= 0:
-            subsystems.drivetrain.set(.4, 0, 0, 0)
+            subsystems.drivetrain.set(.5, 0, 0, 0)
         else:
-            subsystems.drivetrain.set(-.4, 0, 0, 0)
+            subsystems.drivetrain.set(-.5, 0, 0, 0)
 
     def end(self):
         subsystems.drivetrain.set(0, 0, 0, 0)
@@ -43,7 +43,7 @@ class Rotate(Command):
             leftDist = -1 * subsystems.drivetrain.flEncoder.getDistance()
             rightDist = subsystems.drivetrain.frEncoder.getDistance()
 
-        circ = robotmap.auto.wheelBaseDiameter * math.pi
+        circ = robotmap.auto.wheelBaseDiameter * math.pi * 100 / 91
 
         avgDeg = (((leftDist / circ) * 360) + ((rightDist / circ) * 360)) / 2
 
