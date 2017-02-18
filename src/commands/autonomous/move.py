@@ -39,7 +39,7 @@ class Move(Command):
     def isFinished(self):
         avgDist = (math.fabs(subsystems.drivetrain.frEncoder.getDistance()) + math.fabs(subsystems.drivetrain.flEncoder.getDistance()) + math.fabs(subsystems.drivetrain.blEncoder.getDistance())) / 3
 
-        if avgDist > math.fabs(self.dist) - 5:
+        if avgDist > math.fabs(self.dist):
             print("Move finished")
             subsystems.drivetrain.printEncoderValues()
 
