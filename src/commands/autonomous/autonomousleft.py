@@ -17,7 +17,7 @@ class AutonomousLeft(CommandGroup):
 
         self.addParallel(CloseGear())
         self.addSequential(Move(robotmap.auto.initialDrive))
-        self.addSequential(Rotate(-60))
+        self.addSequential(Rotate(-65))
         self.addSequential(Move(robotmap.auto.stageTwoDrive))
         self.addParallel(OpenGear())
         self.addSequential(DriveWaitCommand(1))

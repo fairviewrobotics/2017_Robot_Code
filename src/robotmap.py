@@ -31,19 +31,20 @@ buttonsAndAxesList.rope60PercentID = 3
 buttonsAndAxesList.rope100PercentID = 4
 
 buttonsAndAxesList.inverseDirectionID = 8
+buttonsAndAxesList.originalDirectionID = 7
 
 buttonsAndAxesList.ropeAxis = 4
 buttonsAndAxesList.fuelOutakeAxis = 3
 
 positionList = SimpleNamespace()
 positionList.closeGearDoorPosition = 0.0
-positionList.openGearDoorPosition = 1.0
+positionList.openGearDoorPosition = 0.7
 
 speedsList = SimpleNamespace()
 speedsList.ropeSpeed = 0.9
 speedsList.fuelOutakeSpeed = 0.9
 speedsList.deadZoneRadius = 0.1
-speedsList.minimumWheelRotation = 0.2
+speedsList.minimumWheelRotation = 0.05
 
 encoders = SimpleNamespace()
 encoders.fr = [0, 1]
@@ -55,9 +56,9 @@ encoders.distancePerPulse = (math.pi * 8 / 360) * (151 / 120) * (120 / 116)
 
 auto = SimpleNamespace()
 
-auto.initialDrive = -62.00
-auto.stageTwoDrive = -33.29
-auto.stageThreeDrive = 12
-auto.straightDrive = -103.8
+auto.initialDrive = -78.00
+auto.stageTwoDrive = -57.29
+auto.stageThreeDrive = 48
+auto.straightDrive = -75.0
 
 auto.wheelBaseDiameter = 21.5

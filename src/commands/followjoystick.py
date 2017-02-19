@@ -33,7 +33,7 @@ class FollowJoystick(Command):
             yValue = -1 * robotmap.speedsList.minimumWheelRotation + \
                 (1 - robotmap.speedsList.minimumWheelRotation) * (y ** 3)
 
-        subsystems.drivetrain.set(xValue, yValue, z, 0)
+        subsystems.drivetrain.set(xValue * .7, yValue * .9, z, 0)
 
         if oi.joystick.getRawButton(
                 robotmap.buttonsAndAxesList.rope60PercentID):
@@ -57,10 +57,10 @@ class FollowJoystick(Command):
 
         if oi.joystick.getRawButton(
             robotmap.buttonsAndAxesList.inverseDirectionID):
-            if subsystems.drivetrain.inverted:
-                subsystems.drivetrain.inverted = False
-            else:
-                subsystems.drivetrain.inverted = True
+            subsystems.drivetrain.inverted = True
+        elif oi.joystick.getRawButton(
+            robotmap.buttonsAndAxesList.originalDirectionID):
+            subsystems.drivetrain.inverted = False
 
     def end(self):
         subsystems.drivetrain.set(0, 0, 0, 0)
