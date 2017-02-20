@@ -36,10 +36,10 @@ class Robot(CommandBasedRobot):
         self.autoChooser.addDefault("Straight Autonomous", AutonomousStraight())
         self.autoChooser.addObject("Left Autonomous", AutonomousLeft())
         self.autoChooser.addObject("Right Autonomous", AutonomousRight())
-        self.autoChooser.addObject("Straigh 1 foot", Move(12))
+        self.autoChooser.addObject("Straight 12 feet", Move(120))
         self.autoChooser.addObject("Rotate 90 degrees", Rotate(90))
 
-        self.autoProgram = AutonomousStraight()
+        self.autoProgram = Move(120)
 
         wpilib.SmartDashboard.putData("Autonomous Mode Chooser", self.autoChooser)
 
@@ -73,7 +73,7 @@ class Robot(CommandBasedRobot):
         """
         CloseGear().start()
 
-        self.autoProgram = self.autoChooser.getSelected()
+        # self.autoProgram = self.autoChooser.getSelected()
         self.autoProgram.start()
 
         print("Autonomous initialized")
