@@ -48,6 +48,11 @@ class Robot(CommandBasedRobot):
         wpilib.SmartDashboard.putData('Gear Mech', subsystems.gear)
         wpilib.SmartDashboard.putData('Rope Mech', subsystems.rope)
 
+        wpilib.LiveWindow.addActuator("Drivetrain", "Front Left Wheel", subsystems.drivetrain.frontLeftWheel)
+        wpilib.LiveWindow.addActuator("Drivetrain", "Front Right Wheel", subsystems.drivetrain.frontRightWheel)
+        wpilib.LiveWindow.addActuator("Drivetrain", "Back Left Wheel", subsystems.drivetrain.backLeftWheel)
+        wpilib.LiveWindow.addActuator("Drivetrain", "Back Right Wheel", subsystems.drivetrain.backRightWheel)
+
         print("Initialized robot")
 
     def autonomousInit(self):
