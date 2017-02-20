@@ -55,6 +55,11 @@ class Robot(CommandBasedRobot):
         wpilib.LiveWindow.addActuator("Drivetrain", "Back Left Wheel", subsystems.drivetrain.backLeftWheel)
         wpilib.LiveWindow.addActuator("Drivetrain", "Back Right Wheel", subsystems.drivetrain.backRightWheel)
 
+        wpilib.LiveWindow.addSensor("Drivetrain", "Front Left Encoder", subsystems.drivetrain.flEncoder)
+        wpilib.LiveWindow.addSensor("Drivetrain", "Front Right Encoder", subsystems.drivetrain.frEncoder)
+        wpilib.LiveWindow.addSensor("Drivetrain", "Back Left Encoder", subsystems.drivetrain.blEncoder)
+        wpilib.LiveWindow.addSensor("Drivetrain", "Back Right Encoder", subsystems.drivetrain.brEncoder)
+
         wpilib.LiveWindow.addActuator("Rope Mechanism", "Rope", subsystems.rope.motor)
 
         wpilib.LiveWindow.addActuator("Fuel Outtake", "Fuel Outtake", subsystems.fuelOutake.motor)
