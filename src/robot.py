@@ -59,6 +59,8 @@ class Robot(CommandBasedRobot):
 
         wpilib.LiveWindow.addActuator("Fuel Outtake", "Fuel Outtake", subsystems.fuelOutake.motor)
 
+        wpilib.LiveWindow.addActuator("Gear Mechanism" , "Servo", subsystems.gear.servo)
+
         print("Initialized robot")
 
     def autonomousInit(self):
