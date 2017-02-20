@@ -41,8 +41,6 @@ class Robot(CommandBasedRobot):
 
         wpilib.SmartDashboard.putData("Autonomous Mode Chooser", self.autoChooser)
 
-        self.autoProgram = AutonomousRight()
-
         wpilib.SmartDashboard.putData('Scheduler', wpilib.command.Scheduler.getInstance())
 
         wpilib.SmartDashboard.putData('Drivetrain', subsystems.drivetrain)
@@ -57,7 +55,7 @@ class Robot(CommandBasedRobot):
         """
         CloseGear().start()
 
-        # self.autoProgram = self.autoChooser.getSelected()
+        self.autoProgram = self.autoChooser.getSelected()
         self.autoProgram.start()
 
         print("Autonomous initialized")
