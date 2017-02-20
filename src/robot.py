@@ -55,6 +55,8 @@ class Robot(CommandBasedRobot):
         wpilib.LiveWindow.addActuator("Drivetrain", "Back Left Wheel", subsystems.drivetrain.backLeftWheel)
         wpilib.LiveWindow.addActuator("Drivetrain", "Back Right Wheel", subsystems.drivetrain.backRightWheel)
 
+        wpilib.LiveWindow.addActuator("Rope Mechanism", "Rope", subsystems.rope.motor)
+
         print("Initialized robot")
 
     def autonomousInit(self):
