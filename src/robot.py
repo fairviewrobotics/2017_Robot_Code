@@ -39,6 +39,8 @@ class Robot(CommandBasedRobot):
         self.autoChooser.addObject("Straigh 1 foot", Move(12))
         self.autoChooser.addObject("Rotate 90 degrees", Rotate(90))
 
+        self.autoProgram = AutonomousStraight()
+
         wpilib.SmartDashboard.putData("Autonomous Mode Chooser", self.autoChooser)
 
         wpilib.SmartDashboard.putData('Scheduler', wpilib.command.Scheduler.getInstance())
