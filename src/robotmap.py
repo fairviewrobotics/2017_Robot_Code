@@ -38,7 +38,7 @@ buttonsAndAxesList.fuelOutakeAxis = 3
 
 positionList = SimpleNamespace()
 positionList.closeGearDoorPosition = 0.0
-positionList.openGearDoorPosition = 0.5
+positionList.openGearDoorPosition = 0.50
 
 speedsList = SimpleNamespace()
 speedsList.ropeSpeed = 0.9
