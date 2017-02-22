@@ -1,5 +1,6 @@
 import wpilib
 from commandbased import CommandBasedRobot
+from networktables import NetworkTables
 
 import subsystems
 

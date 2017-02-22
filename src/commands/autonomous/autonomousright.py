@@ -16,6 +16,7 @@ class AutonomousRight(CommandGroup):
 
         self.addSequential(Move(robotmap.auto.initialDrive))
         self.addSequential(Rotate(60))
+        self.addSequential(RotateUntilAligned())
         self.addSequential(Move(robotmap.auto.stageTwoDrive))
         self.addParallel(OpenGear())
         self.addSequential(DriveWaitCommand(1))
