@@ -1,5 +1,6 @@
 import wpilib
 from commandbased import CommandBasedRobot
+from networktables import NetworkTables
 
 import subsystems
 
@@ -65,6 +66,8 @@ class Robot(CommandBasedRobot):
         wpilib.LiveWindow.addActuator("Fuel Outtake", "Fuel Outtake", subsystems.fuelOutake.motor)
 
         wpilib.LiveWindow.addActuator("Gear Mechanism" , "Servo", subsystems.gear.servo)
+
+        wpilib.CameraServer.launch('vision.py:main')
 
         print("Initialized robot")
 

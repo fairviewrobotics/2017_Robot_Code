@@ -64,3 +64,5 @@ auto.rotateAngle = 65
 auto.straightDrive = -75.0
 
 auto.wheelBaseDiameter = 21.5
+
+auto.network.camera = '10.20.36.11'
