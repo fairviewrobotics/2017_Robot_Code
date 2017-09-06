@@ -55,6 +55,7 @@ encoders.bl = [6, 7]
 encoders.distancePerPulse = (math.pi * 8 / 360)
 
 auto = SimpleNamespace()
+auto.network = SimpleNamespace()
 
 auto.initialDrive = -78.00
 auto.stageTwoDrive = -57.29

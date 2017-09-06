@@ -24,7 +24,7 @@ class RotateUntilAligned(Command):
       pass
 
     def execute(self):
-        if nt.getNumber('offset') < 0
+        if nt.getNumber('offset') < 0:
             subsystems.drivetrain.set(.5, 0, 0, 0)
         else:
             subsystems.drivetrain.set(-.5, 0, 0, 0)
